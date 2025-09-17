@@ -7,7 +7,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Glitch&family=Ruda:wght@400..900&display=swap');
 
 :root {
-    
+    /*fontes*/
+    --var01: "Rubik Glitch", system-ui;
+    --var02: "Montserrat", sans-serif;
+    --var03: "Ruda", sans-serif;
+
+    /*Cores*/
+    --var04: #06A73F;
+    --var05: #FDC734;
+    --var06: #1013EB;
+    --var07: #48805C;
 }
 
 *{
@@ -30,5 +39,3 @@ header > h1 {
 
 
 }
-
-
