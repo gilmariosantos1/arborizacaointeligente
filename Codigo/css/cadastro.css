@@ -30,3 +30,29 @@ body {
 
 }
 
+main {
+ display: flex;
+ 
+}   
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+  justify-content:center ;
+  align-items: center;
+}
+
+.container h1 {
+    font-family: var(--var01);
+    color: white;
+    font-weight: 100;
+    text-shadow: 1px 1px lightgray ;
+}
+
+.logo0124 {
+    width: 240px;
+    height: 265px;
+    border-radius: 150px;
+    
+}
