@@ -27,12 +27,11 @@
 body {
     background-color: var(--var05);
     width: 100%;
-
 }
 
 main {
  display: flex;
- 
+ justify-content: center;
 }   
 
 
@@ -41,18 +40,89 @@ main {
     flex-direction: column;
   justify-content:center ;
   align-items: center;
+  gap: 20PX;
+  width: 95%;
 }
 
 .container h1 {
     font-family: var(--var01);
     color: white;
     font-weight: 100;
-    text-shadow: 1px 1px lightgray ;
+    text-shadow: 1px 1px var(--var05) ;
+    
 }
 
 .logo0124 {
     width: 240px;
     height: 265px;
     border-radius: 150px;
-    
+    margin-top:  15px;
 }
+
+section {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    height: 765px;
+    gap: 20px
+}
+
+section h2 {
+    font-family: var(--var01);
+    color: var(--var07);
+    font-weight: 100;
+    margin-top: 20px;
+}
+
+.section-container {
+  display: contents;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+    display: flex;
+}
+
+.form-cntainer {
+    font-family: serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.form-group {
+  flex: 1 1 45%; 
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 2px solid lightgrey;
+  gap: 10px;
+}
+
+#check-termo {
+    margin-right: auto;
+}
+
+.btn-register{
+  flex: 1 1 100%; 
+  padding: 12px;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+}
+
+.btn-voltar {
+    margin-right: 1px;
+}
+
+/*
+@media (max-width: 768px) {
+  .form-group {
+    flex: 1 1 100%;
+  }
+}*/
