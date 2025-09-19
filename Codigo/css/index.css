@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ruda:wght@400..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Glitch&family=Ruda:wght@400..900&display=swap');
+
+:root {
+    /*fontes*/
+    --var01: "Rubik Glitch", system-ui;
+    --var02: "Montserrat", sans-serif;
+    --var03: "Ruda", sans-serif;
+
+    /*Cores*/
+    --var04: #06A73F;
+    --var05: #FDC734;
+    --var06: #1013EB;
+    --var07: #48805C;
+}
+
+iframe {
+    padding-top: 80px;
+    margin: auto;
+    display: block;
+    width: 800px;
+    height: 400px;
+    
+}
+
+main {
+    width: 800px;
+    margin: auto;
+}
+main > h1.titulo {
+    text-align: center;
+    margin-top: 20px;
+    padding: 0px;
+    color: var(--var07);
+    font-family: var(--var02);
+}
+main > h1.topico {
+    text-align: left;
+    margin-top: 20px;
+    padding: 0px;
+    color: var(--var07);
+    font-family: var(--var02);
+}
+
+.linha {
+    border-bottom: 2px solid gray;
+    width: 414px;
+    margin: auto;
+    display: block;
+    
+    
+}
+
+.linha-topico {
+    border-bottom: 2px solid gray;
+    width: 350px;
+    text-align: left;
+    
+    
+}
+img.imagem {
+    display: block;
+    margin: auto;
+    width: 800px;
+    padding-top: 30px;
+    
+}
+ main > p#topico-oquee {
+    padding-top: 20px;
+    font-size: 20px;
+ }
