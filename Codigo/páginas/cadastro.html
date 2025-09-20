@@ -2,74 +2,89 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/cadastro.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/cadastro.css" />
     <title>Cadastro</title>
 </head>
 
 <body>
+    <div class="container">
 
-    <main>
-        <div class="container"><img src="../imagens/3442850 3.png" alt="Logo Arborização Inteligente" class="logo0124">
-            <h1>Arborização Inteligente</h1>
+        <div class="tracos">
 
-            <section>
-                <div class="section-container">
-                    <h2>Cadastro</h2>
+            <img src="../imagens/imagem_2025-06-17_183814212-removebg-preview 10.png" alt="" class="traco-esq-1">
+            <img src="../imagens/imagem_2025-06-17_183814212-removebg-preview 10.png" alt="" class="traco-esq-2">
 
-                <form action="#" method="post" class="form-container">
-                    <div class="form-group"><label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+            <img src="../imagens/imagem_2025-06-17_183814212-removebg-preview 9.png" alt="" class="traco-dir-1">
+            <img src="../imagens/imagem_2025-06-17_183814212-removebg-preview 9.png" alt="" class="traco-dir-2">
 
-                    <label for="cpf">CPF</label>
-                    <input type="number" name="cpf" placeholder="000.000.000-00" required>
-
-                    <label for="data de nascimento">Data de nascimento</label>
-                    <input type="date" name="cpf" placeholder="000.000.000-00" required>
-
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" placeholder="exemplo1905@gmail.com" required>
-
-                    <label for="cep">CEP
-                    </label>
-                    <input type="number" name="cep" placeholder="00000-000" required></div>
-
-                    
-
-                    <div class="form-group">
-                        <label for="estado">Estado
-                    </label>
-                    <input type="text" name="estado" placeholder="Ex: Sergipe" required>
-                    <label for="cidade">Cidade
-                    </label>
-                    <input type="text" name="cidade" placeholder="Ex:Aracaju" required>
-                    <label for="senha">Senha
-                    </label>
-                    <input type="password" name="senha" placeholder="*******" required>
-                    <input type="checkbox" required
-                    id="check-termo">
-                    <label for="termo" > Termo de
-                        usuário</label>
-
-                    <button type="submit" class="btn-register">Register</button>
-                </div>
-
-                    
-                </form>
-
-                <button class="btn-voltar"><a href="#">Voltar</a></button>
-                </div>
-                
-            </section>
         </div>
 
-    </main>
-    <footer>
-        <h3>Salve o ambiente!!</h2>
+        <main>
+            <div class="main-container">
 
-            <p>&copy;2025 Arborização Inteligente!.ALL RIGHT RESERVED</p>
-    </footer>
+
+
+                <img src="../imagens/3442850 3.png" alt="Logo Arborização Inteligente" class="logo0124">
+
+
+
+                <h1>Arborização Inteligente</h1>
+
+                <section>
+                    <h2>Cadastro</h2>
+
+                    <form action="#" method="post" class="form-container">
+                        <div class="form-group">
+                            <label for="nome">Nome de usuário</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+
+                            <label for="cpf">CPF</label>
+                            <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+
+                            <label for="nascimento">Data de nascimento</label>
+                            <input type="date" id="nascimento" name="nascimento" required>
+
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="exemplo@gmail.com" required>
+
+                            <label for="cep">CEP</label>
+                            <input type="text" id="cep" name="cep" placeholder="00000-000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <input type="text" id="estado" name="estado" placeholder="Ex: Sergipe" required>
+
+                            <label for="cidade">Cidade</label>
+                            <input type="text" id="cidade" name="cidade" placeholder="Ex: Aracaju" required>
+
+                            <label for="senha">Senha</label>
+                            <input type="password" id="senha" name="senha" placeholder="*******" required>
+
+                            <div>
+                                <input type="checkbox" id="check-termo" required>
+                                <label for="check-termo">Termo de usuário</label>
+                            </div>
+
+                            <button type="submit" class="btn-register">Register</button>
+                        </div>
+                    </form>
+
+                    <div class="button">
+                        <button class="btn-voltar"><a href="#">Voltar</a></button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <h3>Salve o ambiente!!</h3>
+            <p>&copy;2025 Arborização Inteligente! ALL RIGHTS RESERVED</p>
+        </footer>
+
+    </div>
 </body>
 
 </html>
