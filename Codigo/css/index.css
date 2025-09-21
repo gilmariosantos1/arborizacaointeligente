@@ -72,5 +72,31 @@ img.imagem {
 }
  main > p#topico-oquee {
     padding-top: 20px;
-    font-size: 20px;
+    
  }
+
+ .topico {
+    text-align: left;
+    margin-top: 20px;
+    padding: 0px;
+    color: var(--var07);
+    font-family: var(--var02);
+    font-size: 32px;
+    font-weight: bold;
+    
+}
+
+.linha-topico-impor {
+    border-bottom: 2px solid gray;
+    width: 590px;
+    text-align: left;
+}
+
+
+ img {
+    display: block;
+    margin: auto;
+    width: 800px;
+    padding-top: 30px;
+    
+}
