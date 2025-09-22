@@ -28,6 +28,9 @@ iframe {
     
 }
 
+#reconhecimento{
+    background-image: url('../imagens/casa\ 1\ \(1\).png');
+}
 main {
     max-width: 800px;
     margin: auto;
@@ -113,4 +116,5 @@ li {
     width: 430px;
     text-align: left;
 }
+
 
