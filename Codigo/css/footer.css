@@ -63,6 +63,9 @@ footer {
     left: 50%;
     
 }
+span{
+    padding: 2px;
+}
 
 footer > p{
     color: white;
