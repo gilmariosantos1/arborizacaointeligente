@@ -56,8 +56,9 @@ body {
 }
 
 .conteudo img {
-    width: 220px;
-    border-radius: 36px;
+    width: 319px;
+    border-radius: 50px;
+    height: 213px;
 }
 
 .conteudo p {
@@ -122,4 +123,41 @@ div#reconhecimento {
     padding:20px;
     
 
+}
+/* Foto sobe para cima no tablet */
+@media (max-width: 768px) {
+    .conteudo {
+        display: flex;
+        flex-direction: column-reverse; /* foto em cima */
+        align-items: center;
+        text-align: center;
+    }
+
+    .conteudo img {
+        width: 180px;
+        margin-bottom: 20px;
+    }
+
+    .conteudo p {
+        font-size: 20px;
+    }
+}
+
+/* Foto sobe para cima no celular */
+@media only screen and (max-width: 660px) {
+    .div#reconhecimento {
+        display: none;
+        flex-direction: column-reverse; /* foto em cima */
+        align-items: center;
+        text-align: center;
+    }
+
+    .conteudo img {
+        width: 150px;
+        margin-bottom: 15px;
+    }
+
+    .conteudo p {
+        font-size: 18px;
+    }
 }
