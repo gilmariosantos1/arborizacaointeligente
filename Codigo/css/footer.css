@@ -32,7 +32,7 @@ footer {
     text-align: center;
     font-family: var(--var01);
     font-weight: 100;
-    font-size: 20px;
+    
     padding: 10px;
     text-shadow: 0px 1px 9px #1013eb;
     position: relative;
@@ -65,11 +65,12 @@ footer {
 }
 span{
     padding: 2px;
+    font-size: 30px;
 }
 
 footer > p{
     color: white;
-    font-size: 12px;
+    
     font-family: var(--var03);
     margin-top: 50px;
 }
