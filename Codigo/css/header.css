@@ -91,4 +91,26 @@ div#reconhecimento{
     background-position: center;
 }
 
+@media only screen and (max-width:660px) {
+    div#entraecadastra {
+        display: none;
+    }
 
+    header {
+        height: auto;
+        /* background-position: center; */
+        background-position-x: 50%;
+        background-position-y: 50px;
+    }
+    div#reconhecimento {
+        margin-top: 75px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav {
+        display: none;
+    }
+}
