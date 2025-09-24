@@ -37,6 +37,8 @@ footer {
     text-shadow: 0px 1px 9px #1013eb;
     position: relative;
     
+
+    
     
 }
 
@@ -45,6 +47,7 @@ footer {
     margin: auto;
     font-family: var(--var01);
     font-weight: lighter;
+    
 }
 
 #iconinsta {
@@ -52,11 +55,11 @@ footer {
     position: absolute;
     top: 30%;
     left: 48%;
-    
+    padding-top: 30px;
 }
 
 #icone-mail {
-    
+    padding-top: 30px;
     width: 28px;
     position: absolute;
     top: 27%;
@@ -73,4 +76,34 @@ footer > p{
     
     font-family: var(--var03);
     margin-top: 50px;
+}
+
+#simbolo-esquerda {
+    position: absolute;
+    right: 98%;
+    display: inline;
+    bottom: 45%;
+}
+
+#simbolo-direita{
+    position: absolute;
+    left: 98%;
+    display: inline;
+    top: 1%;
+    padding: 0px;
+    margin: 0px;
+}
+
+#simbolo-baixo-direita {
+    position: absolute;
+    top: 145%;
+}
+
+#simbolo-baixo-esquerda {
+    position: absolute;
+    top: 149%;
+}
+
+#simbolo-meio-esquerda {
+    position: absolute;
 }
