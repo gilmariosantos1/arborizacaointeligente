@@ -22,7 +22,39 @@
     left: 48%;
 }
 
+#simbolo-esquerda {
+    position: absolute;
+    right: 91%;
+    width: 90px;
+    bottom: 45%;
 }
+
+#simbolo-direita{
+    position: absolute;
+    left: 98%;
+    display: inline;
+    
+    padding: 0px;
+    margin: 0px;
+}
+
+#simbolo-baixo-direita {
+    position: absolute;
+    top: 145%
+}
+
+#simbolo-baixo-esquerda {
+    position: absolute;
+    
+    right: 29%;
+}
+
+#simbolo-meio-esquerda {
+    position: absolute;
+}
+
+}
+
 
 
 
@@ -75,6 +107,35 @@ footer > p{
     font-size: 12px;
     font-family: var(--var03);
     margin-top: 50px;
+}
+
+#simbolo-esquerda {
+    position: absolute;
+    right: 98%;
+    display: inline;
+    bottom: 45%;
+}
+
+#simbolo-direita{
+    position: absolute;
+    left: 98%;
+    display: inline;
+    top: 1%;
+    padding: 0px;
+    margin: 0px;
+}
+
+#simbolo-baixo-direita {
+    position: absolute;
+    top: 145%
+}
+#simbolo-baixo-esquerda {
+    position: absolute;
+    top: 149%;
+}
+
+#simbolo-meio-esquerda {
+    position: absolute;
 }
 
 }
