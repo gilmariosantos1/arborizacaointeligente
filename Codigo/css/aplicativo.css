@@ -43,6 +43,8 @@ body {
     margin-bottom: 20px;
     font-size: 1.8rem;
     color: #48805C;
+    font-family: var(--var03);
+    
 }
 
 .conteudo {
@@ -65,9 +67,12 @@ body {
     flex: 1;
     font-size: 25px;
     line-height: 1.6;
-    color: #fff;
 }
-
+.img {
+    font-family:var(--var01);
+    width:px;
+    font-size:50px;
+}
 
 .download {
     background-color: #1013eb;
@@ -77,14 +82,15 @@ body {
 }
 
 .download h3 {
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-bottom: 15px;
+    font-family:var(--var01);
 }
 
 .download a {
-    display: inline-block;
+    /* display: inline-block; */
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #fff;
     text-decoration: underline;
     margin-bottom: 20px;
@@ -93,14 +99,24 @@ body {
 .download img {
     width: 348px;
     height: 232px;
-    top: 50px;
-    left:30px;
-    background-color: lightblue;
+    margin: auto;
     border-radius:36;
     margin-top: 20px;
 
 }
+.app {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: var(--var03);
 
+}
+.arborizacao {
+    color: var(--var06);
+}
+.discricao {
+    color: #fff;
+}
 
 footer {
     background-color: #f4d03f;
