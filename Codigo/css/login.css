@@ -31,25 +31,35 @@ body {
   background-color: var(--var05);
   font-family: sans-serif;
   display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
+  margin-top: 50px;
 }
 
 main {
   z-index: 1;
+  flex-grow: 1;
 }
 
 .main-container h1 {
   font-family:var(--var01);
   font-size: 2.5rem;
-  font-weight: bold;
   color: white;
   margin-bottom: 30px;
   font-weight: 100;
   z-index: 1;
   position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .card {
@@ -58,7 +68,7 @@ main {
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0,0,0,0.2);
   max-width: 900px;
-  width: 90%;
+  width: 100%;
   z-index: 1;
   position: relative;
 }
@@ -91,7 +101,7 @@ main {
 
 .form-login h2 {
   font-family:var(--var01);
-  color: var(--var04);
+  color: var(--var07);
   text-align: center;
   margin-bottom: 20px;
   font-weight: 100;
@@ -118,15 +128,7 @@ main {
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
-}
-
-.btn-entrar a {
   color: white;
-  text-decoration: none;
-}
-
-.btn-entrar:hover {
-  background-color: #333;
 }
 
 .form-login p {
@@ -165,6 +167,8 @@ main {
 
 .tracos img {
   position: absolute;
+  width: 40px;
+  height: 85px;
 }
 
 .traco-esq-1 {
@@ -177,12 +181,12 @@ main {
 }
 
 .traco-esq-2 {
-  top: 85%;
+  top: 75%;
   left: 0px;
 }
 
 .traco-dir-2 {
-  top: 85%;
+  top: 75%;
   right: 0px;
 }
 
@@ -197,3 +201,6 @@ main {
   }
 }
 
+footer {
+  background-color: white;
+}
