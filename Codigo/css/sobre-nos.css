@@ -177,6 +177,9 @@ footer {
 }
 
 @media only screen and (max-width:660px) {
+    main {
+        margin-top: 0px;
+    }
     .texto > div {
         flex-direction: column;
     }

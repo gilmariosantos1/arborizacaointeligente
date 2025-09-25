@@ -13,19 +13,56 @@
     <header>
         <h1>Arborização Inteligente</h1>
         <div id="entraecadastra">
-            <a href="../páginas/cadastro.html" class="cadastrar">Cadastre-se</a>
-            <a href="../páginas/login.html" class="entrar" >Entrar</a>
+
+            <a href="../paginas/cadastro.html" class="cadastrar">Cadastre-se</a>
+            <a href="../paginas/login.html" class="entrar" >Entrar</a>
         </div>    
 
-        <nav id="menudenav">
+        <nav class="menu_nav">
             <ul>
                 <a href="../index.html">Início</a>
-                <a class="underline-item-nav" href="./páginas/sobre-nos.html">Sobre-nós</a>
+                <a class="underline-item-nav" href="./paginas/sobre-nos.html">Sobre-nós</a>
                 <a href="./páginas/aplicativo.html">Aplicativo</a>
                 <a href="./páginas/contato.html">Contato</a>
                 <a href="./páginas/upload.html">Upload</a>
             </ul>
         </nav>
+      
+        <div class="menu_btn" id="menu_btn" onclick="showNav()">
+            <img src="../imagens/Menu.svg" alt="Ícone do menu de opções">
+        </div>
+        <div id="all"></div>
+        <nav class="nav_drop" id="nav_drop">
+            <ul>
+                <div class="drop_title"><h3>Sobre-nós</h3></div>
+                <a href="../index.html" class="drop_item">
+                    <div class="drop_item_title">Início</div>
+                    <div class="drop_item_desc">Volte para o início</div>
+                </a>
+                <a href="../páginas/aplicativo.html" class="drop_item">
+                    <div class="drop_item_title">Aplicativo</div>
+                    <div class="drop_item_desc">Instale o nosso aplicativo e promova a sustentabilidade!</div>
+                </a>
+                <a href="../páginas/contato.html" class="drop_item">
+                    <div class="drop_item_title">Contato</div>
+                    <div class="drop_item_desc">Tem alguma dúvida ou sugestão? É só falar conosco.</div>
+                </a>
+                <a href="../páginas/upload.html" class="drop_item">
+                    <div class="drop_item_title">Upload</div>
+                    <div class="drop_item_desc">Mande fotos de locais mal arborizados e de árvores invasoras!</div>
+                </a>
+                <div class="drop_title"></div>
+                <a href="../" class="drop_item">
+                    <div class="drop_item_title">Entrar</div>
+                    <div class="drop_item_desc">Acesse seus dados</div>
+                </a>
+                <a href="#" class="drop_item">
+                    <div class="drop_item_title">Cadastrar-se</div>
+                    <div class="drop_item_desc">Faça seu cadastro para otimizar sua contribuição com a comunidade</div>
+                </a>
+            </ul>
+        </nav>
+
         <div id="reconhecimento">
             <img src="../imagens/team.png" alt="Ícone de uma silhueta de três pessoas">
         </div>
@@ -68,5 +105,6 @@
     <footer>
         aaa
     </footer>
+    <script src="../js/sobre-nos.js"></script>
 </body>
 </html>
