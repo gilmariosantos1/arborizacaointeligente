@@ -87,13 +87,23 @@ a.entrar {
 }
 
 .nav_drop {
-    /* display: none; */
+    display: none;
     font-family: var(--var02);
     background-color: #fff;
     position: absolute;
     top: 119px;
     width: 100%;
     max-width: 300px;
+    z-index: 3;
+}
+
+#all {
+    display: none;
+    width: 100vh;
+    height: 100vh;
+    background-color: ;
+    position: absolute;
+    top: -42px;
     z-index: 2;
 }
 
