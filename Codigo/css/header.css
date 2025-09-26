@@ -25,7 +25,6 @@
 }
 
 header{
-    
     height: 92px;
     background-color: #1013EB;
     text-align: center;
@@ -37,16 +36,12 @@ header{
 }
 
 header > h1 {
-    
     font-family: var(--var01);
     color: white;
     font-weight: 100;
     padding-top: 15px;
-
-
 }
 div#entraecadastra {
-    
     position: absolute;
     right: 2%;
     top: 23%;
@@ -69,23 +64,93 @@ a.cadastrar {
 
 a.entrar {
     margin-top: 5px;    
-    
 }
 
-nav{
+.menu_nav{
     margin: 10px;
 }
-nav a{
+.menu_nav a{
     color: white;
     text-decoration: none;
     padding: 10px;
     font-family: var(--var02);
 }
 
-nav a:hover{
+.menu_nav a:hover{
     text-decoration: underline 2px;
+    text-underline-offset: 5px;
     text-decoration-color: #67EB26;
     text-decoration-line: underline;
+}
+
+a.underline-item-nav {
+    text-decoration: underline 2px #67EB26;
+    text-underline-offset: 5px;
+}
+
+.menu_btn {
+    display: none;
+}
+
+.nav_drop {
+    display: none;
+    font-family: var(--var02);
+    background-color: #fff;
+    position: absolute;
+    top: 119px;
+    width: 100%;
+    max-width: 300px;
+    z-index: 3;
+}
+
+#all {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: -42px;
+    z-index: 2;
+}
+
+.nav_drop ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.drop_title {
+    margin: 0px 20px;
+    padding: 10px 0px 10px 0px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.drop_title h3 {
+    font-weight: normal;
+    width: max-content;
+}
+
+.drop_item {
+    padding: 10px 0px 10px 40px;
+    text-align: start;
+    color: #000;
+    text-decoration: none;
+}
+
+.drop_item:hover {
+    background-color: #1e1e1e;
+}
+
+.drop_item:hover .drop_item_title {
+    color: #fff;
+}
+
+.drop_item:hover .drop_item_desc {
+    color: #adadad;
+}
+
+.drop_item_desc {
+    color: #757575;
+    font-size: 80%;
+    margin-top: 5px;
 }
 
 div#reconhecimento{
@@ -95,4 +160,33 @@ div#reconhecimento{
     background-position: center;
 }
 
+@media only screen and (max-width:660px) {
+    div#entraecadastra {
+        display: none;
+    }
 
+    header {
+        height: auto;
+        background-position-x: 50%;
+        background-position-y: 50px;
+    }
+    div#reconhecimento {
+        margin-top: 75px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .menu_nav {
+        display: none;
+    }
+
+    .menu_btn {
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        cursor: pointer;
+    }
+}
