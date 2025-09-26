@@ -47,6 +47,7 @@
     max-width: 600px;
     width: 100%;
     text-align: center;
+    color: #ffffff;
 }
 
 .contact-box h2 {
@@ -78,14 +79,15 @@
     display: block; /* Garante que cada rótulo ocupe sua própria linha */
     margin-bottom: 5px; /* Adiciona um pequeno espaço entre o rótulo e o campo */
     font-weight: bold; /* Deixa o texto do rótulo em negrito */
+    color: #000;
 }
 
 .input-group input,
 .input-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ffffff;
-    border-radius: 5px;
+    border-width: 1px solid #0000; /* Altere este valor para o que você preferir */
+    border-radius: 5px solid #0000; /* Borda Preta de 5 pixels */
     font-size: 1em;
     font-family: 'Roboto', sans-serif;
 }
