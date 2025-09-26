@@ -1,5 +1,6 @@
   @media screen and (min-width: 600px ) and (max-width: 1200px) {
 
+
 #icones  {
     margin: auto;
     font-family: var(--var01);
@@ -60,15 +61,13 @@ footer {
     position: absolute;
     top: 11.9%;
     left: 46%;
-    
 }
 
 #icone-mail {
-    
     width: 28px;
     position: absolute;
-     top: 10%;
-    left: 49%;
+    top: 13%;
+    left: 49.5%;
 }
 
 footer > p{
@@ -86,17 +85,18 @@ footer > p{
 
 
 
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1880px) {
+
 footer {
     background-color: var(--var05);
     text-align: center;
     font-family: var(--var01);
     font-weight: 100;
     font-size: 20px;
-    
     text-shadow: 0px 1px 9px #1013eb;
     position: relative;
-    
-    
     
 }
 
@@ -112,15 +112,14 @@ footer {
     position: absolute;
     top: 11.9%;
     left: 47.5%;
-    
 }
 
 #icone-mail {
-    
     width: 28px;
     position: absolute;
-     top: 10%;
+    top: 13%;
     left: 49.5%;
+    
 }
 
 footer > p{
@@ -129,6 +128,5 @@ footer > p{
     font-family: var(--var03);
     margin-top: 50px;
 }
-
 
 }
