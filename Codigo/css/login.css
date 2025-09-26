@@ -33,6 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  gap: 30px;
 }
 
 .container {
@@ -203,4 +204,8 @@ main {
 
 footer {
   background-color: white;
+}
+
+footer p {
+  color: #000000;
 }
