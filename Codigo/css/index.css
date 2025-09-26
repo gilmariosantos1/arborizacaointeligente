@@ -18,7 +18,9 @@
     --var06: #1013EB;
     --var07: #48805C;
 }
-
+body{
+    max-width: 100vw;
+}
 iframe {
     padding-top: 80px;
     margin: auto;
@@ -28,6 +30,9 @@ iframe {
     
 }
 
+#reconhecimento{
+    background-image: url('../imagens/casa\ 1\ \(1\).png');
+}
 main {
     max-width: 800px;
     margin: auto;
@@ -96,7 +101,7 @@ img.imagem {
     display: block;
     margin: auto;
     max-width: 100%;
-    padding-top: 30px;
+    
     
 }
 
@@ -113,4 +118,5 @@ li {
     width: 430px;
     text-align: left;
 }
+
 
