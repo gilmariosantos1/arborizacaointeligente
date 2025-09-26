@@ -33,7 +33,6 @@ body {
 
 
 .aplicativo {
-    margin-top: 94px;
     background-color: #f4d03f;
     padding: 40px 20px;
     text-align: center;
@@ -169,7 +168,25 @@ div#reconhecimento {
     }
 
     .conteudo img {
-        width: 150px;
+        width: 300px;
+        margin-bottom: 15px;
+    }
+
+    .conteudo p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 661px) and (max-width: 768px) {
+    .div#reconhecimento {
+        display: none;
+        flex-direction: column-reverse; /* foto em cima */
+        align-items: center;
+        text-align: center;
+    }
+
+    .conteudo img {
+        width: 300px;
         margin-bottom: 15px;
     }
 
