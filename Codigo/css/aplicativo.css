@@ -34,7 +34,7 @@ body {
 
 .aplicativo {
     background-color: #f4d03f;
-    padding: 40px 20px;
+    padding: 90px 20px;
     text-align: center;
 }
 
@@ -139,6 +139,52 @@ div#reconhecimento {
     
 
 }
+.tracos img {
+    position: absolute;
+    width: 40px;
+}
+.traco_esquerda01 {
+    left: 0px;
+    top: 185px;
+}
+
+.traco_esquerda02 {
+    left: 0px;
+    top: 600px;
+}
+
+.traco_direira01 {
+    right: 0px;
+    top: 185px;
+}
+
+.traco_direira02 {
+    right: 0px;
+    top: 600px;
+}
+.tracos img {
+    position: absolute;
+    width: 40px;
+}
+.traco_esquerda03 {
+    left: 0px;
+    top: 1150px;
+}
+
+.traco_esquerda04 {
+    left: 0px;
+    top:799px;
+}
+
+.traco_direira03 {
+    right: 0px;
+    top: 1140px;
+}
+
+.traco_direira04 {
+    right: 0px;
+    top: 798px;
+}
 /* Foto sobe para cima no tablet */
 @media (max-width: 768px) {
     .conteudo {
@@ -159,7 +205,7 @@ div#reconhecimento {
 }
 
 /* Foto sobe para cima no celular */
-@media only screen and (max-width: 660px) {
+@media only screen and (max-width: 768px) {
     .div#reconhecimento {
         display: none;
         flex-direction: column-reverse; /* foto em cima */
