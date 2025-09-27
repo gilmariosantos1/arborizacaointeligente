@@ -8,30 +8,78 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/header.css"> 
     <link rel="stylesheet" href="../css/aplicativo.css"> 
+    <link rel="stylesheet" href="../css/media-query_footer.css"> 
+    <link rel="stylesheet" href="../css/footer.css"> 
     
 </head>
 <body>
   
      <header>
-        <h1>Arborização Inteligente</h1>
+    <h1>Arborização Inteligente</h1>
         <div id="entraecadastra">
-            <a href="#" class="cadastrar">Cadastre-se </a>
-            <a href="#" class="entrar" >Entrar</a>
+
+            <a href="../paginas/cadastro.html" class="cadastrar">Cadastre-se</a>
+            <a href="../paginas/login.html" class="entrar" >Entrar</a>
         </div>    
 
-        <nav id="menudenav">
+        <nav class="menu_nav">
             <ul>
-                <a href="páginas/pagina.login-e-cadastro.html">Início</a>
-                <a href="./páginas/sobre-nos.html">Sobre-nós</a>
-                <a href="./páginas/aplicativo.html">Aplicativo</a>
-                <a href="./páginas/contato.html">Contato</a>
-                <a href="./páginas/upload.html">Upload</a>
+                <a href="../index.html">Início</a>
+                <a href="sobre-nos.html">Sobre-nós</a>
+                <a class="underline-item-nav" href="aplicativo.html">Aplicativo</a>
+                <a href="contato.html">Contato</a>
+                <a href="upload.html">Upload</a>
+            </ul>
+        </nav>
+      
+        <div class="menu_btn" id="menu_btn" onclick="showNav()">
+            <img src="../imagens/Menu.svg" alt="Ícone do menu de opções">
+        </div>
+        <div id="all"></div>
+        <nav class="nav_drop" id="nav_drop">
+            <ul>
+                <div class="drop_title"><h3>Aplicativo</h3></div>
+                <a href="../index.html" class="drop_item">
+                    <div class="drop_item_title">Início</div>
+                    <div class="drop_item_desc">Volte para o início</div>
+                </a>
+                <a href="aplicativo.html" class="drop_item">
+                    <div class="drop_item_title">Aplicativo</div>
+                    <div class="drop_item_desc">Instale o nosso aplicativo e promova a sustentabilidade!</div>
+                </a>
+                <a href="contato.html" class="drop_item">
+                    <div class="drop_item_title">Contato</div>
+                    <div class="drop_item_desc">Tem alguma dúvida ou sugestão? É só falar conosco.</div>
+                </a>
+                <a href="upload.html" class="drop_item">
+                    <div class="drop_item_title">Upload</div>
+                    <div class="drop_item_desc">Mande fotos de locais mal arborizados e de árvores invasoras!</div>
+                </a>
+                <div class="drop_title"></div>
+                <a href="login.html" class="drop_item">
+                    <div class="drop_item_title">Entrar</div>
+                    <div class="drop_item_desc">Acesse seus dados</div>
+                </a>
+                <a href="cadastro.html" class="drop_item">
+                    <div class="drop_item_title">Cadastrar-se</div>
+                    <div class="drop_item_desc">Faça seu cadastro para otimizar sua contribuição com a comunidade</div>
+                </a>
             </ul>
         </nav>
         <div id="reconhecimento">
         <img src="../imagens/icon.png" alt="icon arvore">
         </div>
+       
+        
     </header>
+    <div class="tracos">
+        <img class="traco_esquerda03" src="../imagens/tracos-tecnologicos-esquerda.png" alt="">
+        <img class="traco_esquerda04" src="../imagens/tracos-tecnologicos-esquerda.png" alt="">
+
+        <img class="traco_direira03" src="../imagens/tracos-tecnologicos-direita.png" alt="">
+        <img class="traco_direira04" src="../imagens/tracos-tecnologicos-direita.png" alt="">
+    </div>
+
     <section class="verde"></section>
     
 
@@ -39,24 +87,50 @@
     <section class="aplicativo">
         <h2>Aplicativo</h2>
         <div class="conteudo">
-            <img src="../imagens/3442850 3.png" alt="Aplicativo Arborização Inteligente">
-            <p>
-                O aplicativo <strong>Arborização Inteligente</strong> conta com um sistema de monitoramento, onde, sua função é localizar árvores e especificar tanto sua espécie (invasora ou local), como também se está em local de risco (postes de luz, muito próximo de casas etc). O aplicativo serve para as pessoas e também empresas que desejam antecipar problemas de falta de energia após tempestades ou caso aconteça algum acidente.
-            </p>
+            <div class="img">
+            <img src="../imagens/aplicativo.png" alt="Aplicativo Arborização Inteligente">
+            
+            <p class="arborizacao">Arborização Inteligente</p> </div>
+                <p class="discricao">O aplicativo<strong> Arborização Inteligente</strong> conta com um sistema de monitoramento, onde, sua função é localizar árvores 
+                e especificar tanto sua espécie (invasora ou local), como também se está em local de risco (postes de luz, muito próximo de casas etc). 
+                O aplicativo serve para as pessoas e também empresas que desejam antecipar problemas de falta de energia após tempestades ou caso aconteça algum acidente.</p>
+        </div>
+<div class="tracos">
+        <img class="traco_esquerda01" src="../imagens/tracos-tecnologicos-esquerda.png" alt="">
+        <img class="traco_esquerda02" src="../imagens/tracos-tecnologicos-esquerda.png" alt="">
+
+        <img class="traco_direira01" src="../imagens/tracos-tecnologicos-direita.png" alt="">
+        <img class="traco_direira02" src="../imagens/tracos-tecnologicos-direita.png" alt="">
+    </div>
+
+    </section>
+
+    <section class="download">
+        <div class="app">
+        <h3 class="titulo">Baixe o aplicativo!</h3>
+        <a href="#">Clique aqui para instalar</a>
+        <img src="../imagens/aplicativo.png" alt="aplicativo Arborização Inteligente">
+        
+        </div>
+       
         </div>
     </section>
 
-    
-    <section class="download">
-        <h3 class="titulo">Baixe o aplicativo!</h3>
-        <a href="#">Clique aqui para instalar</a>
-        <img src="../imagens/3442850 3.png" alt="">
-    </section>
+       <footer>
+        <div>
+             <span style="color:  #1013eb;">Salve</span><span style="color: white;"> o </span><span style="color: #06a73f;">ambiente!!</span>
+        </div>
 
-   
-    <footer>
-        <p class="titulo">Salve o meio ambiente!</p>
-        <p>©️ 2025 Arborização Inteligente</p>
+        <div id="icones">
+            <a href="https://www.instagram.com/arborizacao_inteligente?igsh=M2N2ZmZtaDdtNTcz"><img src="../imagens/Instagram.png" alt="ícone do instagram" id="iconinsta"></a>
+            <a href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=new"><img src="../imagens/mail.png" alt="ícone de e-mail" id="icone-mail"></a>
+            
+        </div>
+        <p>
+           © 2025 Arborização Inteligente!. ALL RIGHT RESERVED.
+        </p>
+  
     </footer>
+     <script src="../js/sobre-nos.js"></script>
 </body>
 </html>
