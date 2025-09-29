@@ -27,14 +27,20 @@
 
 body {
   background-color: var(--var05);
-  width: 100%;
-  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+}
+
+.container {
+  flex-grow: 1;
 }
 
 main {
   display: flex;
   justify-content: center;
-  
+  flex-grow: 1;
 }
 
 
@@ -44,7 +50,7 @@ main {
   justify-content: center;
   align-items: center;
   gap: 20PX;
-  width: 95%;
+  width: 60%;
   
 }
 
@@ -60,7 +66,7 @@ main {
   width: 240px;
   height: 240px;
   border-radius: 50%;
-  margin-top: 15px;
+  margin-top: 30px;
   z-index: 1;
 }
 
@@ -153,6 +159,8 @@ form.form-container {
 
 .tracos img {
   position: absolute;
+  width: 40px;
+  height: 85px;
 }
 
 .traco-esq-1 {
@@ -165,11 +173,19 @@ form.form-container {
 }
 
 .traco-esq-2 {
-  top: 85%;
+  top: 75%;
   left: 0px;
 }
 
 .traco-dir-2 {
-  top: 85%;
+  top: 75%;
   right: 0px;
+}
+
+footer {
+  background-color: white;
+}
+
+footer p {
+  color: #000000;
 }
