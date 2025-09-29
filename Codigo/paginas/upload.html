@@ -1,11 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/media-query_footer.css">
+    <link rel="shortcut icon" href="../imagens/3442850 3.png" type="image/x-icon">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Sobre-nós</title>
+    <link rel="stylesheet" href="../css/upload.css">
 </head>
 <body>
+    <header>
+        <h1>Arborização Inteligente</h1>
+        <div id="entraecadastra">
+
+            <a href="../paginas/cadastro.html" class="cadastrar">Cadastre-se</a>
+            <a href="../paginas/login.html" class="entrar" >Entrar</a>
+        </div>    
+
+        <nav class="menu_nav">
+            <ul>
+                <a href="../index.html">Início</a>
+                <a href="sobre-nos.html">Sobre-nós</a>
+                <a href="aplicativo.html">Aplicativo</a>
+                <a href="contato.html">Contato</a>
+                <a href="upload.html">Upload</a>
+            </ul>
+        </nav>
+      
+        <div class="menu_btn" id="menu_btn" onclick="showNav()">
+            <img src="../imagens/Menu.svg" alt="Ícone do menu de opções">
+        </div>
+        <div id="all"></div>
+        <nav class="nav_drop" id="nav_drop">
+            <ul>
+                <div class="drop_title"><h3>Sobre-nós</h3></div>
+                <a href="../index.html" class="drop_item">
+                    <div class="drop_item_title">Início</div>
+                    <div class="drop_item_desc">Volte para o início</div>
+                </a>
+                <a href="aplicativo.html" class="drop_item">
+                    <div class="drop_item_title">Aplicativo</div>
+                    <div class="drop_item_desc">Instale o nosso aplicativo e promova a sustentabilidade!</div>
+                </a>
+                <a href="contato.html" class="drop_item">
+                    <div class="drop_item_title">Contato</div>
+                    <div class="drop_item_desc">Tem alguma dúvida ou sugestão? É só falar conosco.</div>
+                </a>
+                <a href="upload.html" class="drop_item">
+                    <div class="drop_item_title">Upload</div>
+                    <div class="drop_item_desc">Mande fotos de locais mal arborizados e de árvores invasoras!</div>
+                </a>
+                <div class="drop_title"></div>
+                <a href="login.html" class="drop_item">
+                    <div class="drop_item_title">Entrar</div>
+                    <div class="drop_item_desc">Acesse seus dados</div>
+                </a>
+                <a href="cadastro.html" class="drop_item">
+                    <div class="drop_item_title">Cadastrar-se</div>
+                    <div class="drop_item_desc">Faça seu cadastro para otimizar sua contribuição com a comunidade</div>
+                </a>
+            </ul>
+        </nav>
+
     
+
+    </header>
+
+    <main>
+        <h1>
+            Envie sua imagem!
+        </h1>
+
+        <p>
+            Envie uma imagem de uma árvore invasora <br> e/ou de um local mal arborizada
+        </p>
+
+        <input type="button" value="Upload">
+    </main>
+    
+    <footer style="background-color: white;">
+        <div>
+             <span style="color:  #1013eb;">Salve</span><span style="color: white;"> o </span><span style="color: #06a73f;">ambiente!!</span>
+        </div>
+
+        <div id="icones">
+            <a href="https://www.instagram.com/arborizacao_inteligente?igsh=M2N2ZmZtaDdtNTcz"><img src="../imagens/Instagram.png" alt="ícone do instagram" id="iconinsta"></a>
+            <a href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=new"><img src="../imagens/mail.png" alt="ícone de e-mail" id="icone-mail"></a>
+            
+        </div>
+        <p style="color: black;">
+           © 2025 Arborização Inteligente!. ALL RIGHT RESERVED.
+        </p>
+        
+    </footer>
+    <script src="../js/sobre-nos.js"></script>
 </body>
 </html>
