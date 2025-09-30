@@ -26,17 +26,50 @@
             <a href="#" class="entrar" >Entrar</a>
         </div>    
 
-        <nav class="menu_nav">
+       <nav class="menu_nav">
             <ul>
                 <a href="../index.html">Início</a>
                 <a href="sobre-nos.html">Sobre-nós</a>
-                <a href="aplicativo.html">Aplicativo</a>
+                <a class="underline-item-nav" href="aplicativo.html">Aplicativo</a>
                 <a href="contato.html">Contato</a>
                 <a href="upload.html">Upload</a>
             </ul>
         </nav>
-        <div id="reconhecimento">
+      
+        <div class="menu_btn" id="menu_btn" onclick="showNav()">
+            <img src="../imagens/Menu.svg" alt="Ícone do menu de opções">
         </div>
+        <div id="all"></div>
+        <nav class="nav_drop" id="nav_drop">
+            <ul>
+                <div class="drop_title"><h3>Aplicativo</h3></div>
+                <a href="../index.html" class="drop_item">
+                    <div class="drop_item_title">Início</div>
+                    <div class="drop_item_desc">Volte para o início</div>
+                </a>
+                <a href="aplicativo.html" class="drop_item">
+                    <div class="drop_item_title">Aplicativo</div>
+                    <div class="drop_item_desc">Instale o nosso aplicativo e promova a sustentabilidade!</div>
+                </a>
+                <a href="contato.html" class="drop_item">
+                    <div class="drop_item_title">Contato</div>
+                    <div class="drop_item_desc">Tem alguma dúvida ou sugestão? É só falar conosco.</div>
+                </a>
+                <a href="upload.html" class="drop_item">
+                    <div class="drop_item_title">Upload</div>
+                    <div class="drop_item_desc">Mande fotos de locais mal arborizados e de árvores invasoras!</div>
+                </a>
+                <div class="drop_title"></div>
+                <a href="login.html" class="drop_item">
+                    <div class="drop_item_title">Entrar</div>
+                    <div class="drop_item_desc">Acesse seus dados</div>
+                </a>
+                <a href="cadastro.html" class="drop_item">
+                    <div class="drop_item_title">Cadastrar-se</div>
+                    <div class="drop_item_desc">Faça seu cadastro para otimizar sua contribuição com a comunidade</div>
+                </a>
+            </ul>
+        </nav>
     </header>
         <div class="container">
             <section class="contact-section">
@@ -86,6 +119,6 @@
         
     </footer>
 
-    <script src="/Codigo/js/script.js"></script>
+    <script src="../js/sobre-nos.js"></script>
 </body>
 </html>
