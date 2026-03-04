@@ -10,7 +10,7 @@ Projeto voltado para monitoramento e preservação das árvores.
 7. Equipe
 
 ## 1. Introdução 🔥
-    O projeto Arborização inteligente tem o obetivo de aumentar a preservação através da retirada de árvores que estão caindo, o monitoramento via geolocalização e a eliminação de espécies estrangeiras não naturais que prejudicam o ambiente.
+    <p>O projeto Arborização inteligente tem o obetivo de aumentar a preservação através da retirada de árvores que estão caindo, o monitoramento via geolocalização e a eliminação de espécies estrangeiras não naturais que prejudicam o ambiente.</p>
 
 ## 2. Problema ⚠️
     Quedas de energia, proveniente de arvores não retiradas, calor intenso por causa da falta de arborização na cidade e a má filtração do ar, assim gerando uma qualidade de vida inferior ao ideal.
