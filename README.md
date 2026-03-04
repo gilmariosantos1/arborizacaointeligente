@@ -34,19 +34,19 @@ Projeto voltado para monitoramento e preservação das árvores.
     <div style="padding: 5px;">Desenvolvedor</div>
     </td>
 <td align="center" style="border: 5px solid white; padding: 10px;">
-    <img src="https://github.com/marcosdosea/MaisTransporte/assets/105898363/e0526e5e-064e-4b91-aa37-36c9ebf052e5" alt="Eliane Dantas de Jesus" width="110px">
+    <img src="" alt="Eliane Dantas de Jesus" width="110px">
     <br>
     <a href="https://github.com/Elianedantas" target="_blank">Eliane Dantas de Jesus</a>
     <div style="padding: 5px;">Desenvolvedora</div>
 </td>
 <td align="center" style="border: 5px solid white; padding: 10px;">
-    <img src="https://github.com/marcosdosea/MaisTransporte/assets/105898363/e283cf1e-c2df-43f7-bdbc-b326eeec5800" alt="Gilmario dos Santos Silva" width="110px">
+    <img src="" alt="Gilmario dos Santos Silva" width="110px">
     <br>
     <a href="https://github.com/gilmariosantos1" target="_blank">Gilmario dos Santos Silva</a>
     <div style="padding: 5px;">Desenvolvedor</div>
 </td>
   <td align="center" style="border: 5px solid white; padding: 10px;">
-    <img src="https://avatars.githubusercontent.com/u/102239679?v=4" alt="Natalia da Silva Costa" width="110px">
+    <img src="" alt="Natalia da Silva Costa" width="110px">
     <br>
     <a href="https://github.com/nataliascosta" target="_blank">Natalia da Silva Costa</a>
     <div style="padding: 5px;">Desenvolvedora</div>
