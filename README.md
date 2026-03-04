@@ -18,6 +18,7 @@ Projeto voltado para monitoramento e preservação das árvores.
 <p>Quedas de energia, proveniente de arvores não retiradas, calor intenso por causa da falta de arborização na cidade e a má filtração do ar, assim gerando uma qualidade de vida inferior ao ideal.</p>
 
 ## 3. Solução 💡
+<P>Criar um sistema de monitoramento com geolocalização parar mapear as árvores da cidade, identificar riscos de queda e substituir espécies inadequadas por nativas.</P>
 
 ## 4. Público alvo 🎯
 <p>Habitantes que sofrem com as ilhas de calor geradas na cidade em que reside
@@ -39,15 +40,15 @@ Cidades mal arborizadas</p>
     <div style="padding: 5px;">Desenvolvedor</div>
     </td>
 <td align="center" style="border: 5px solid white; padding: 10px;">
-    <img src="" alt="Eliane Dantas de Jesus" width="110px">
+    <img src="https://avatars.githubusercontent.com/u/220428218?v=4" alt="Breno da Silva Oliveira" width="110px">
     <br>
-    <a href="https://github.com/Elianedantas" target="_blank">Eliane Dantas de Jesus</a>
-    <div style="padding: 5px;">Desenvolvedora</div>
+    <a href="https://github.com/Brenoda-silva" target="_blank">Breno da Silva Oliveira</a>
+    <div style="padding: 5px;">Desenvolvedor</div>
 </td>
 <td align="center" style="border: 5px solid white; padding: 10px;">
-    <img src="" alt="Gilmario dos Santos Silva" width="110px">
+    <img src="https://avatars.githubusercontent.com/u/220428405?s=400&u=5a15db4673e8b8a4ac367f656b488b0bba541818&v=4" alt="Antonio Rivaldo Correia da Silva" width="110px">
     <br>
-    <a href="https://github.com/gilmariosantos1" target="_blank">Gilmario dos Santos Silva</a>
+    <a href="https://github.com/Antoniorival35" target="_blank">Antonio Rivaldo Correia da Silva</a>
     <div style="padding: 5px;">Desenvolvedor</div>
 </td>
   <td align="center" style="border: 5px solid white; padding: 10px;">
