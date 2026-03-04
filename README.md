@@ -16,6 +16,7 @@ Projeto voltado para monitoramento e preservação das árvores.
 
 ## 2. Problema ⚠️
 <p>Quedas de energia, proveniente de arvores não retiradas, calor intenso por causa da falta de arborização na cidade e a má filtração do ar, assim gerando uma qualidade de vida inferior ao ideal.</p>
+
 ## 3. Solução 💡
 
 ## 4. Público alvo 🎯
