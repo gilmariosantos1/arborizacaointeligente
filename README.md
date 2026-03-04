@@ -1,4 +1,5 @@
 # arborizacaointeligente
+Projeto voltado para monitoramento e preservação das árvores.
 
 1. Introdução
 2. Problema
@@ -9,20 +10,51 @@
 7. Equipe
 
 ## 1. Introdução 🔥
-
+<p>
+    O projeto Arborização inteligente tem o obetivo de aumentar a preservação através da retirada de árvores que estão caindo, o monitoramento via geolocalização e a eliminação de espécies estrangeiras não naturais que prejudicam o ambiente.
+</p>
 
 ## 2. Problema ⚠️
-
+<p>Quedas de energia, proveniente de arvores não retiradas, calor intenso por causa da falta de arborização na cidade e a má filtração do ar, assim gerando uma qualidade de vida inferior ao ideal.</p>
 ## 3. Solução 💡
 
 ## 4. Público alvo 🎯
-	Habitantes que sofrem com as ilhas de calor geradas na cidade em que reside
-	Habitantes que sofrem com queda de energia após uma tempestade ou durante
-	Prefeitura, instituições educacionais e empresas do setor elétrico pois eles podem utilizar nosso sistema para melhorar a arborização da cidade e até fechar uma parceria com a organização 
-	Cidades mal arborizadas
+<p>Habitantes que sofrem com as ilhas de calor geradas na cidade em que reside
+Habitantes que sofrem com queda de energia após uma tempestade ou durante
+Prefeitura, instituições educacionais e empresas do setor elétrico pois eles podem utilizar nosso sistema para melhorar a arborização da cidade e até fechar uma parceria com a organização 
+Cidades mal arborizadas</p>
 
 ## 5. Links Úteis
 
 ## 6. Apresentação
 
 ## 7. Equipe🤝
+<table style="border-collapse: collapse; border: 5px solid white;">
+<tr>
+<td align="center" style="border: 5px solid white; padding: 10px;">
+    <img src="https://avatars.githubusercontent.com/u/91738412?s=400&u=ad5f6b6787de37ebcd7537be72c6168edce626a8&v=4" alt="Guilherme Antonio Santos de Oliveira" width="110px">
+    <br>
+    <a href="https://github.com/GUILHERMEGASO" target="_blank">Guilherme Antonio Santos de Oliveira</a>
+    <div style="padding: 5px;">Desenvolvedor</div>
+    </td>
+<td align="center" style="border: 5px solid white; padding: 10px;">
+    <img src="" alt="Eliane Dantas de Jesus" width="110px">
+    <br>
+    <a href="https://github.com/Elianedantas" target="_blank">Eliane Dantas de Jesus</a>
+    <div style="padding: 5px;">Desenvolvedora</div>
+</td>
+<td align="center" style="border: 5px solid white; padding: 10px;">
+    <img src="" alt="Gilmario dos Santos Silva" width="110px">
+    <br>
+    <a href="https://github.com/gilmariosantos1" target="_blank">Gilmario dos Santos Silva</a>
+    <div style="padding: 5px;">Desenvolvedor</div>
+</td>
+  <td align="center" style="border: 5px solid white; padding: 10px;">
+    <img src="https://avatars.githubusercontent.com/u/181983439?v=4" alt="Júlio Monteiro" width="110px">
+    <br>
+    <a href="https://github.com/Monteiro1000" target="_blank">Júlio Monteiro</a>
+    <div style="padding: 5px;">Desenvolvedor</div>
+</table>
+<p align="center"> 
+  <img src="#">
+</p>
