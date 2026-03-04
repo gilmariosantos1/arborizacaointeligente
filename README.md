@@ -46,10 +46,10 @@ Projeto voltado para monitoramento e preservação das árvores.
     <div style="padding: 5px;">Desenvolvedor</div>
 </td>
   <td align="center" style="border: 5px solid white; padding: 10px;">
-    <img src="" alt="Natalia da Silva Costa" width="110px">
+    <img src="https://avatars.githubusercontent.com/u/181983439?v=4" alt="Júlio Monteiro" width="110px">
     <br>
-    <a href="https://github.com/nataliascosta" target="_blank">Natalia da Silva Costa</a>
-    <div style="padding: 5px;">Desenvolvedora</div>
+    <a href="https://github.com/Monteiro1000" target="_blank">Júlio Monteiro</a>
+    <div style="padding: 5px;">Desenvolvedor</div>
 </table>
 <p align="center"> 
   <img src="#">
