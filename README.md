@@ -55,6 +55,13 @@ Cidades mal arborizadas</p>
     <br>
     <a href="https://github.com/Monteiro1000" target="_blank">Júlio Monteiro</a>
     <div style="padding: 5px;">Desenvolvedor</div>
+    </td>
+    <td align="center" style="border: 5px solid white; padding: 10px;">
+    <img src="https://st2.depositphotos.com/2631505/5462/i/950/depositphotos_54626107-stock-photo-happy-businessman-holding-funny-huge.jpg" alt="Combustível" width="110px">
+    <br>
+    <a href="https://github.com/Monteiro1000" target="_blank">Café</a>
+    <div style="padding: 5px;">Combustível</div>
+    </td>
 </table>
 <p align="center"> 
   <img src="#">
