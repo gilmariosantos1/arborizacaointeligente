@@ -28,9 +28,9 @@ Projeto voltado para monitoramento e preservação das árvores.
 <table style="border-collapse: collapse; border: 5px solid white;">
 <tr>
 <td align="center" style="border: 5px solid white; padding: 10px;">
-    <img src="https://avatars.githubusercontent.com/u/105898363?v=4" alt="Alesandro da Silva Santos" width="110px">
+    <img src="https://avatars.githubusercontent.com/u/91738412?s=400&u=ad5f6b6787de37ebcd7537be72c6168edce626a8&v=4" alt="Guilherme Antonio Santos de Oliveira" width="110px">
     <br>
-    <a href="https://github.com/Alesandr0" target="_blank"> Alesandro da Silva Santos</a>
+    <a href="https://github.com/GUILHERMEGASO" target="_blank">Guilherme Antonio Santos de Oliveira</a>
     <div style="padding: 5px;">Desenvolvedor</div>
     </td>
 <td align="center" style="border: 5px solid white; padding: 10px;">
