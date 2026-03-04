@@ -45,9 +45,9 @@ Cidades mal arborizadas</p>
     <div style="padding: 5px;">Desenvolvedora</div>
 </td>
 <td align="center" style="border: 5px solid white; padding: 10px;">
-    <img src="" alt="Gilmario dos Santos Silva" width="110px">
+    <img src="https://avatars.githubusercontent.com/u/220428405?s=400&u=5a15db4673e8b8a4ac367f656b488b0bba541818&v=4" alt="Antonio Rivaldo Correia da Silva" width="110px">
     <br>
-    <a href="https://github.com/gilmariosantos1" target="_blank">Gilmario dos Santos Silva</a>
+    <a href="https://github.com/Antoniorival35" target="_blank">Antonio Rivaldo Correia da Silva</a>
     <div style="padding: 5px;">Desenvolvedor</div>
 </td>
   <td align="center" style="border: 5px solid white; padding: 10px;">
