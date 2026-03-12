@@ -1,4 +1,4 @@
-# arborizacaointeligente
+# ARBORIZAÇÃO INTELIGENTE
 Projeto voltado para monitoramento e preservação das árvores.
 
 1. Introdução
