@@ -1,0 +1,198 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.tracos {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 40px 0;
+}
+
+.tracos img,
+.tracos2 img {
+    position: absolute;
+    opacity: 0.1;
+}
+
+.tracoEsquerda03,
+.tracoEsquerda04,
+.tracoEsquerda01,
+.tracoEsquerda02 {
+    left: 0;
+}
+
+.tracoEsquerda03 {
+    top: 10%;
+}
+
+.tracoEsquerda04 {
+    bottom: 10%;
+}
+
+.tracoDireira03,
+.tracoDireira04,
+.tracoDireira01,
+.tracoDireira02 {
+    right: 0;
+}
+
+.tracoDireira03 {
+    top: 10%;
+}
+
+.tracoDireira04 {
+    bottom: 10%;
+}
+
+.verde {
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(135deg, #06A73F 0%, #48805C 100%);
+    margin: 40px 0;
+}
+
+.aplicativo {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.aplicativo h2 {
+    font-size: 32px;
+    color: #1013EB;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.arborizacao {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1013EB;
+    font-family: "Montserrat", sans-serif;
+}
+
+.discricao {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+}
+
+.discricao strong {
+    color: #1013EB;
+    font-weight: 700;
+}
+
+.tracos2 {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin: 40px 0;
+}
+
+.download {
+    padding: 60px 20px;
+    background-color: #f5f5f5;
+}
+
+.app {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 28px;
+    color: #1013EB;
+    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.app a {
+    display: inline-block;
+    background-color: #1013EB;
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    margin: 20px 0;
+    transition: background-color 0.3s;
+}
+
+.app a:hover {
+    background-color: #0a0ccb;
+}
+
+.app img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .tracos {
+        height: 200px;
+    }
+
+    .aplicativo {
+        padding: 40px 15px;
+    }
+
+    .aplicativo h2 {
+        font-size: 24px;
+    }
+
+    .conteudo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .discricao {
+        font-size: 14px;
+    }
+
+    .download {
+        padding: 40px 15px;
+    }
+
+    .titulo {
+        font-size: 24px;
+    }
+
+    .app a {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+}

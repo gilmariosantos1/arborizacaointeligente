@@ -1,0 +1,241 @@
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes navLinkHover {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--primary-yellow);
+    color: var(--primary-blue);
+  }
+}
+
+.header {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #0a0bcd 100%);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-md);
+  animation: slideDown 0.5s ease-out;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  transition: transform var(--transition-normal);
+  flex-shrink: 0;
+  min-width: fit-content;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.logoText {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.3rem;
+  display: none;
+}
+
+/* Navegação Desktop */
+.navDesktop {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.navDesktop a {
+  color: white;
+  font-weight: 500;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition-fast);
+  position: relative;
+  animation: slideDown 0.5s ease-out;
+}
+
+.navDesktop a:hover {
+  border-bottom-color: var(--primary-yellow);
+  color: var(--primary-yellow);
+  transform: translateY(-2px);
+}
+
+/* Botões de Autenticação */
+.authButtons {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
+  animation: slideDown 0.5s ease-out;
+}
+
+.loginLink {
+  color: white;
+  font-weight: 600;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+}
+
+.loginLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary-yellow);
+  transform: scale(1.05);
+}
+
+/* Menu Mobile */
+.menuBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  color: white;
+  transition: transform var(--transition-normal);
+}
+
+.menuBtn img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.navOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.navMobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: white;
+  flex-direction: column;
+  padding: var(--spacing-lg) var(--spacing-md);
+  z-index: 1001;
+  overflow-y: auto;
+  gap: var(--spacing-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.navMobileLink {
+  color: var(--text-dark);
+  font-weight: 600;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  display: block;
+  text-align: left;
+}
+
+.navMobileLink:hover {
+  background-color: var(--bg-light);
+  color: var(--primary-blue);
+}
+
+.divider {
+  border: none;
+  border-top: 2px solid var(--border-color);
+  margin: var(--spacing-sm) 0;
+}
+
+.mobileSignup {
+  margin-top: var(--spacing-sm);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .logoText {
+    display: inline;
+  }
+
+  .navDesktop {
+    display: none;
+  }
+
+  .authButtons {
+    display: none;
+  }
+
+  .menuBtn {
+    display: block;
+  }
+
+  .navOverlay {
+    display: block;
+  }
+
+  .navMobile {
+    display: flex;
+  }
+
+  .container {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    gap: var(--spacing-sm);
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logoText {
+    font-size: 1.1rem;
+  }
+}
