@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Minha Conta</title>
-  <link rel="stylesheet" href="../css/minha-conta.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta - Arborização Inteligente</title>
+    <link rel="stylesheet" href="../css/minha-conta.css">
 </head>
-
 <body>
 
-<header>
-  <!-- header -->
-</header>
+    <main class="minha-conta">
+        <div class="container-login">
+            <h2>Minha Conta</h2>
+            
+            <form id="form-conta">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
 
-<main>
-  <div class="minha-conta">
-    <h2>Minha Conta</h2>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="exemplo@gmail.com">
 
-    <form>
-      <label>Nome</label>
-      <input type="text">
+                <hr style="margin: 20px 0; border: 0.5px solid #eee;">
+                <h3>Alterar Senha</h3>
 
-      <label>Email</label>
-      <input type="email">
+                <label for="senha-atual">Senha atual</label>
+                <input type="password" id="senha-atual" name="senha-atual">
 
-      <h3>Alterar senha</h3>
+                <label for="nova-senha">Nova senha</label>
+                <input type="password" id="nova-senha" name="nova-senha">
 
-      <label>Senha atual</label>
-      <input type="password">
+                <div class="botoes-row">
+                    <button type="submit" class="btn-principal">Salvar</button>
+                    <button type="button" class="btn-voltar" onclick="window.history.back()">Voltar</button>
+                </div>
+            </form>
+        </div>
+    </main>
 
-      <label>Nova senha</label>
-      <input type="password">
-
-      <button>Salvar</button>
-    </form>
-  </div>
-</main>
-
-<footer>
-  <!-- footer -->
-</footer>
-<script src="../js/minha-conta.js"></script>
+    <script src="../js/minha-conta.js"></script>
 </body>
 </html>

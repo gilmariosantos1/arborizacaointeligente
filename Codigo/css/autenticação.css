@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #FFC107;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    margin-bottom: -30px; /* Sobreposição parcial */
+    position: relative;
+    z-index: 2;
+}
+
+main {
+    background-color: white;
+    padding: 50px 30px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.form-section h2 {
+    color: #2e7d32; /* Verde para combinar com a logo */
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-black {
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+    font-weight: bold;
+}
+
+.btn-black:hover {
+    background-color: #444;
+}
+
+.link-forgot {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: #555;
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+footer .brand-footer {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #1a237e;
+}
+
+footer span {
+    color: #4caf50;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arborização Inteligente - Autenticação</title>
+    <link rel="stylesheet" href="../css/autenticação.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Arborização Inteligente</h1>
+            <div class="image-container">
+                <img src="sua-imagem-arvore.jpg" alt="">
+            </div>
+        </header>
+
+        <main id="auth-box">
+            <section id="login-screen" class="form-section">
+                <form>
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="exemplo@gmail.com">
+                    </div>
+                    <div class="input-group">
+                        <label>Senha</label>
+                        <input type="password" placeholder="sua senha">
+                    </div>
+                    <div class="button-row">
+                        <button type="submit" class="btn-black">Sign In</button>
+                        <button type="button" class="btn-black" onclick="toggleForm('register')">Voltar</button>
+                    </div>
+                    <a href="#" class="link-forgot" onclick="toggleForm('forgot')">Esqueceu sua senha?</a>
+                </form>
+            </section>
+
+            <section id="register-screen" class="form-section hidden">
+                <form>
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="exemplo@gmail.com">
+                    </div>
+                    <div class="input-group">
+                        <label>Nome do usuário</label>
+                        <input type="text" placeholder="Nome_Usuario">
+                    </div>
+                    <div class="input-group">
+                        <label>Senha</label>
+                        <input type="password" placeholder="Crie uma senha">
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">Aceito os termos</label>
+                    </div>
+                    <div class="button-row">
+                        <button type="submit" class="btn-black">Register</button>
+                        <button type="button" class="btn-black" onclick="toggleForm('login')">Voltar</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="forgot-screen" class="form-section hidden">
+                <h2>Redefinir a senha</h2>
+                <form>
+                    <div class="input-group">
+                        <label>Email ou número de telefone*</label>
+                        <input type="text">
+                    </div>
+                    <div class="button-row">
+                        <button type="button" class="btn-black">Sign In</button>
+                        <button type="button" class="btn-black" onclick="toggleForm('login')">Voltar</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p class="brand-footer">Salve o <span>ambiente!!</span></p>
+        </footer>
+    </div>
+    <script src="../js/autenticação.js"></script>
+</body>
+</html>
