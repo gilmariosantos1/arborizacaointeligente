@@ -29,7 +29,7 @@ export default function Header() {
           <Link to="/sobre-nos">Sobre-nós</Link>
           <Link to="/aplicativo">Aplicativo</Link>
           <Link to="/contato">Contato</Link>
-          <Link to="/upload">Upload</Link>
+          <Link to="/upload">Alerta verde</Link>
         </nav>
 
         <div className={styles.authButtons}>
