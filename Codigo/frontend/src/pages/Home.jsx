@@ -78,10 +78,20 @@ export default function Home() {
               Transforme o ambiente urbano através de soluções inovadoras de arborização
             </p>
             <div className={styles.heroButtons}>
-              <Button variant="primary" size="large" to="/sobre-nos" component={Link}>
-                Saiba Mais
+              <Button 
+                variant="primary" 
+                size="large" 
+                href="https://www.ufsm.br/unidades-universitarias/ccne/2024/06/20/a-importancia-da-arborizacao-urbana-para-cidades-sustentaveis"
+                target="_blank"
+              >
+                Saiba Mais <span style={{ marginLeft: '8px', display: 'inline-block' }}>↗</span>
               </Button>
-              <Button variant="secondary" size="large" to="/contato" component={Link}>
+              <Button 
+                variant="secondary" 
+                size="large" 
+                to="/contato" 
+                component={Link}
+              >
                 Entre em Contato
               </Button>
             </div>
@@ -179,4 +189,5 @@ export default function Home() {
       <Footer />
     </div>
   )
+  
 }
