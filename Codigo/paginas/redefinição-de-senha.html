@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Redefinir Senha</title>
+  <link rel="stylesheet" href="../css/redefinição-de-senha.css">
+</head>
+<body>
+
+  <div class="container">
+    
+    <h2>Redefinir a senha</h2>
+
+    <form id="resetForm">
+      <label>Nova senha</label>
+      <input type="password" id="senha" placeholder="Nova senha" required>
+
+      <label>Repita a senha</label>
+      <input type="password" id="confirmarSenha" placeholder="Repita a senha" required>
+
+      <div class="botoes">
+        <button type="submit" class="btn-primary">Sign In</button>
+        <button type="button" class="btn-secondary" onclick="voltar()">Voltar</button>
+      </div>
+
+      <p id="mensagemErro"></p>
+    </form>
+
+  </div>
+
+  <script src="../js/redefinição-de-senha.js"></script>
+</body>
+</html>
