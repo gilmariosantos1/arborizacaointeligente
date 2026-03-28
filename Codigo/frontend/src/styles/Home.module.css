@@ -233,10 +233,7 @@
   animation: gridItemSlideUp 0.6s ease-out 0.5s;
 }
 
-.benefitCard:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-}
+
 
 .benefitIcon {
   font-size: 3rem;
