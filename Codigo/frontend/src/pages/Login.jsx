@@ -88,7 +88,7 @@ export default function Login() {
               />
 
               <div className={styles.forgotPassword}>
-                <a href="#forgot">Esqueceu sua senha?</a>
+<Link to="/redefinir-senha">Esqueceu sua senha?</Link>
               </div>
 
               <Button 
