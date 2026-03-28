@@ -55,6 +55,156 @@
     transform: translateY(0);
 }
 
+/* Modal Content */
+.modalContent {
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.modalContent h2 {
+    color: #1013EB;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+/* Form Styles */
+.uploadForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+}
+
+.assuntoOptions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.assuntoButton {
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    transition: all 0.2s;
+    flex: 1;
+    min-width: 120px;
+}
+
+.assuntoButton:hover {
+    border-color: #1013EB;
+    background-color: #f8f9ff;
+}
+
+.assuntoButton.selected {
+    border-color: #1013EB;
+    background-color: #1013EB;
+    color: white;
+}
+
+.textarea {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.textarea:focus {
+    outline: none;
+    border-color: #1013EB;
+}
+
+.fileInput {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+}
+
+.fileInput:focus {
+    outline: none;
+    border-color: #1013EB;
+}
+
+.imagePreview {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.previewImg {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.error {
+    border-color: #e74c3c !important;
+}
+
+.errorMsg {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.addressGroup {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.addressInput {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.addressInput:focus {
+    outline: none;
+    border-color: #1013EB;
+}
+
+.searchButton {
+    padding: 12px 20px;
+    white-space: nowrap;
+}
+
 @media (max-width: 768px) {
     .main {
         padding: 40px 15px;
@@ -71,5 +221,29 @@
     .main input[type="button"] {
         padding: 12px 40px;
         font-size: 14px;
+    }
+
+    .modalContent {
+        padding: 20px;
+    }
+
+    .modalContent h2 {
+        font-size: 20px;
+    }
+
+    .assuntoOptions {
+        flex-direction: column;
+    }
+
+    .assuntoButton {
+        min-width: auto;
+    }
+
+    .addressGroup {
+        flex-direction: column;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
     }
 }
