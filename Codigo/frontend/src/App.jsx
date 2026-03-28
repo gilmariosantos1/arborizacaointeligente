@@ -6,6 +6,7 @@ import SobreNos from './pages/SobreNos'
 import Aplicativo from './pages/Aplicativo'
 import Contato from './pages/Contato'
 import Upload from './pages/Upload'
+import RedefinirSenha from './pages/RedefinirSenha'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/aplicativo" element={<Aplicativo />} />
         <Route path="/contato" element={<Contato />} />
         <Route path="/upload" element={<Upload />} />
+        <Route path="/redefinir-senha" element={<RedefinirSenha />} />
       </Routes>
     </Router>
   )
