@@ -1,0 +1,11 @@
+.mapContainer {
+  margin: 20px 0;
+}
+
+.instruction {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+}
