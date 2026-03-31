@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../auth/AuthContext'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import FormInput from '../components/FormInput'
@@ -11,6 +12,8 @@ export default function Login() {
   const [senha, setSenha] = useState('')
   const [errors, setErrors] = useState({})
   const [isLoading, setIsLoading] = useState(false)
+  const { login } = useAuth()
+  const navigate = useNavigate()
 
   const validateForm = () => {
     const newErrors = {}
@@ -33,15 +36,17 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const newErrors = validateForm()
-    
+
     if (Object.keys(newErrors).length === 0) {
       setIsLoading(true)
-      // Simular envio de dados
-      setTimeout(() => {
-        console.log('Login:', { email, senha })
+      try {
+        await login(email, senha)
+        navigate('/')
+      } catch (err) {
+        setErrors({ geral: err.message || 'Erro ao realizar login. Tente novamente.' })
+      } finally {
         setIsLoading(false)
-        alert('Login realizado com sucesso!')
-      }, 1000)
+      }
     } else {
       setErrors(newErrors)
     }
@@ -90,6 +95,10 @@ export default function Login() {
               <div className={styles.forgotPassword}>
 <Link to="/redefinir-senha">Esqueceu sua senha?</Link>
               </div>
+
+              {errors.geral && (
+                <p className={styles.errorGeral}>{errors.geral}</p>
+              )}
 
               <Button 
                 type="submit" 
