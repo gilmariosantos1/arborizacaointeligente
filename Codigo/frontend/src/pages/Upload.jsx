@@ -5,6 +5,7 @@ import Modal from '../components/Modal'
 import MapSelector from '../components/MapSelector'
 import FormInput from '../components/FormInput'
 import Button from '../components/Button'
+import { uploadService } from '../services/uploadService'
 import styles from '../styles/Upload.module.css'
 
 export default function Upload() {
@@ -18,6 +19,7 @@ export default function Upload() {
   })
   const [selectedLocation, setSelectedLocation] = useState(null)
   const [errors, setErrors] = useState({})
+  const [isLoading, setIsLoading] = useState(false)
 
   const assuntoSuggestions = [
     'Queda de árvore',
@@ -139,14 +141,20 @@ export default function Upload() {
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     if (validateForm()) {
-      // Aqui você pode implementar o envio dos dados
-      console.log('Dados do formulário:', formData)
-      alert('Upload realizado com sucesso!')
-      handleCloseModal()
+      setIsLoading(true)
+      try {
+        await uploadService.enviarRelato(formData)
+        alert('Relato enviado com sucesso!')
+        handleCloseModal()
+      } catch (err) {
+        setErrors({ geral: err.message || 'Erro ao enviar relato. Tente novamente.' })
+      } finally {
+        setIsLoading(false)
+      }
     }
   }
 
@@ -276,12 +284,15 @@ export default function Upload() {
             </div>
 
             {/* Botões */}
+            {errors.geral && (
+              <p className={styles.errorGeral}>{errors.geral}</p>
+            )}
             <div className={styles.buttonGroup}>
               <Button variant="secondary" type="button" onClick={handleCloseModal}>
                 Cancelar
               </Button>
-              <Button variant="primary" type="submit">
-                Enviar
+              <Button variant="primary" type="submit" disabled={isLoading}>
+                {isLoading ? 'Enviando...' : 'Enviar'}
               </Button>
             </div>
           </form>

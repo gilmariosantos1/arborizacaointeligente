@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../auth/AuthContext'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import FormInput from '../components/FormInput'
@@ -22,6 +23,8 @@ export default function Cadastro() {
 
   const [errors, setErrors] = useState({})
   const [isLoading, setIsLoading] = useState(false)
+  const { cadastro } = useAuth()
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
@@ -87,24 +90,15 @@ export default function Cadastro() {
 
     if (Object.keys(newErrors).length === 0) {
       setIsLoading(true)
-      // Simular envio de dados
-      setTimeout(() => {
-        console.log('Cadastro:', formData)
+      try {
+        const { confirmaSenha, termo, dataaNascimento, ...rest } = formData
+        await cadastro({ ...rest, dataNascimento: dataaNascimento })
+        navigate('/login')
+      } catch (err) {
+        setErrors({ geral: err.message || 'Erro ao realizar cadastro. Tente novamente.' })
+      } finally {
         setIsLoading(false)
-        alert('Cadastro realizado com sucesso!')
-        setFormData({
-          nome: '',
-          email: '',
-          cpf: '',
-          dataaNascimento: '',
-          cep: '',
-          estado: '',
-          cidade: '',
-          senha: '',
-          confirmaSenha: '',
-          termo: false
-        })
-      }, 1000)
+      }
     } else {
       setErrors(newErrors)
     }
@@ -263,6 +257,10 @@ export default function Cadastro() {
                 </label>
                 {errors.termo && <span className={styles.error}>{errors.termo}</span>}
               </div>
+
+              {errors.geral && (
+                <p className={styles.errorGeral}>{errors.geral}</p>
+              )}
 
               <Button
                 type="submit"
