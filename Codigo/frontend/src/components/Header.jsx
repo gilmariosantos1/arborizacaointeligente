@@ -56,9 +56,11 @@ export default function Header() {
             <Link to="/upload" className={styles.navMobileLink} onClick={closeNav}>Upload</Link>
             <hr className={styles.divider} />
             <Link to="/login" className={styles.navMobileLink} onClick={closeNav}>Entrar</Link>
-            <Button to="/cadastro" variant="primary" size="medium" isFullWidth onClick={closeNav} className={styles.mobileSignup}>
-              Cadastre-se
-            </Button>
+            <Link to="/cadastro">
+              <Button variant="primary" size="medium" isFullWidth onClick={closeNav} className={styles.mobileSignup}>
+                Cadastre-se
+              </Button>
+            </Link>
           </nav>
         </>
       )}
