@@ -44,8 +44,8 @@
 }
 
 .logo {
-  width: 70px;
-  height: 70px;
+  width: 10em;
+  height: 10em;
   object-fit: contain;
   filter: brightness(1.3);
 }

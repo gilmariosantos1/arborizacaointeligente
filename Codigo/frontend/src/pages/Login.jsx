@@ -56,7 +56,7 @@ export default function Login() {
           <div className={styles.formContainer}>
             <div className={styles.formHeader}>
               <Link to="/" className={styles.logoLink}>
-                <img src="/imagens/3442850 3.png" alt="Logo" className={styles.logo} />
+                <img src="/imagens/salvando-a-terra-com-tecnologia-artificial 2.png" alt="Logo" className={styles.logo} />
               </Link>
               <h1>Bem-vindo de Volta</h1>
               <p>Faça login para acessar sua conta</p>

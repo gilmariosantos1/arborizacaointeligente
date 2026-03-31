@@ -10,7 +10,7 @@ export default function Footer() {
         {/* Logo e Descrição */}
         <div className={styles.footerSection}>
           <div className={styles.footerLogo}>
-            <img src="/imagens/3442850 3.png" alt="Logo Arborização Inteligente" />
+            <img src="/imagens/salvando-a-terra-com-tecnologia-artificial 2.png" alt="Logo Arborização Inteligente" />
           </div>
           <p className={styles.footerDesc}>
             Promovendo arborização inteligente e sustentabilidade ambiental nas cidades.
