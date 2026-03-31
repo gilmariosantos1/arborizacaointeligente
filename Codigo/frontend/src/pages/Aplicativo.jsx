@@ -7,13 +7,7 @@ export default function Aplicativo() {
     <div className={styles.container}>
       <Header />
 
-      <div className={styles.tracos}>
-        <img className={styles.tracoEsquerda03} src="/imagens/tracos-tecnologicos-esquerda.png" alt="" />
-        <img className={styles.tracoEsquerda04} src="/imagens/tracos-tecnologicos-esquerda.png" alt="" />
-        <img className={styles.tracoDireira03} src="/imagens/tracos-tecnologicos-direita.png" alt="" />
-        <img className={styles.tracoDireira04} src="/imagens/tracos-tecnologicos-direita.png" alt="" />
-      </div>
-
+      
       <section className={styles.verde}></section>
 
       <section className={styles.aplicativo}>
