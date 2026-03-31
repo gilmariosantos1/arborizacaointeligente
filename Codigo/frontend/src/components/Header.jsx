@@ -20,8 +20,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link to="/" className={styles.logo}>
-          <img src="/imagens/3442850 3.png" alt="Logo Arborização Inteligente" />
-          <span className={styles.logoText}>Arborização Inteligente</span>
+          <img src="/imagens/salvando-a-terra-com-tecnologia-artificial 2.png" alt="Logo Arborização Inteligente" />
         </Link>
 
         <nav className={styles.navDesktop}>

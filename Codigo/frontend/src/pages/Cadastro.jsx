@@ -119,7 +119,7 @@ export default function Cadastro() {
           <div className={styles.welcomeSection}>
             <div className={styles.welcomeContent}>
               <Link to="/" className={styles.logoLink}>
-                <img src="/imagens/3442850 3.png" alt="Logo" className={styles.logo} />
+                <img src="/imagens/salvando-a-terra-com-tecnologia-artificial 2.png" alt="Logo" className={styles.logo} />
               </Link>
               <h2>Junte-se a Nós</h2>
               <p>Comece sua jornada contribuindo para cidades mais verdes</p>
