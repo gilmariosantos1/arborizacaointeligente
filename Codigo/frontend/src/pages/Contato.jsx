@@ -67,12 +67,15 @@ export default function Contato() {
         setFormData({ nome: '', email: '', assunto: '', mensagem: '' })
         
         // Limpar mensagem de sucesso após 5 segundos
-        setTimeout(() => setSubmitSuccess(false), 5000)
-      }, 1000)
-    } else {
-      setErrors(newErrors)
-    }
+    setTimeout(() => {
+      setIsLoading(false)
+      setSubmitSuccess(true)
+    }, 1000)})
+
+  } else {
+    setErrors(newErrors)
   }
+}
 
   const contactInfo = [
     {
@@ -133,11 +136,16 @@ export default function Contato() {
           variant="light"
         >
           <div className={styles.formWrapper}>
-            {submitSuccess && (
-              <div className={styles.successMessage}>
-                ✓ Mensagem enviada com sucesso! Obrigado por entrar em contato.
-              </div>
-            )}
+              {submitSuccess ? ( 
+          <div className={styles.successBox}>
+          <p>
+            Parabéns por apoiar o meio-ambiente, o mundo precisa de mais pessoas como você!
+         </p>
+      </div>
+      ) : (
+  <form onSubmit={handleSubmit} className={styles.contactForm}>
+  </form>
+)}
 
             <form onSubmit={handleSubmit} className={styles.contactForm}>
               <div className={styles.formGrid}>
@@ -167,14 +175,14 @@ export default function Contato() {
               </div>
 
               <FormInput
-                label="Assunto"
+                label="Sobrenome"
                 type="text"
-                id="assunto"
-                name="assunto"
-                placeholder="Qual é o assunto da sua mensagem?"
-                value={formData.assunto}
+                id="sobrenome"
+                name="sobrenome"
+                placeholder="sobrenome"
+                value={formData.sobrenome}
                 onChange={handleChange}
-                error={errors.assunto}
+                error={errors.sobrenome}
                 required
               />
 
@@ -198,12 +206,12 @@ export default function Contato() {
               </div>
 
               <Button
-                type="submit"
-                variant="primary"
-                size="large"
-                disabled={isLoading}
-              >
-                {isLoading ? 'Enviando...' : 'Enviar Mensagem'}
+              type="submit"
+              variant="primary"
+              size="large"
+              disabled={isLoading}
+>
+            {submitSuccess ? 'Enviado!' : (isLoading ? 'Enviando...' : 'Enviar')}
               </Button>
             </form>
           </div>
