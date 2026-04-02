@@ -15,9 +15,9 @@ CREATE SCHEMA IF NOT EXISTS `arborizacao_inteligente` DEFAULT CHARACTER SET utf8
 USE `arborizacao_inteligente` ;
 
 -- -----------------------------------------------------
--- Table `arborizacao_inteligente`.`usuario`
+-- Table `arborizacao_inteligente`.`usuarios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`usuario` (
+CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`usuarios` (
   `id_usuario` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
@@ -26,15 +26,16 @@ CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`usuario` (
   `cep` VARCHAR(8) NOT NULL,
   `estado` VARCHAR(45) NOT NULL,
   `cidade` VARCHAR(45) NOT NULL,
-  `senha` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_usuario`))
+  `senha` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id_usuario`),
+  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `arborizacao_inteligente`.`contato`
+-- Table `arborizacao_inteligente`.`contatos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`contato` (
+CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`contatos` (
   `id_contato` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
@@ -45,22 +46,22 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `arborizacao_inteligente`.`municipalidade`
+-- Table `arborizacao_inteligente`.`municipalidades`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`municipalidade` (
+CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`municipalidades` (
   `id_municipalidade` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(45) NOT NULL,
+  `nome` VARCHAR(100) NOT NULL,
   `estado` VARCHAR(45) NOT NULL,
   `cidade` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id_municipalidade`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `arborizacao_inteligente`.`alerta`
+-- Table `arborizacao_inteligente`.`alertas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`alerta` (
+CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`alertas` (
   `id_upload` INT NOT NULL AUTO_INCREMENT,
   `assunto` VARCHAR(45) NOT NULL,
   `descricao` TEXT(300) NOT NULL,
@@ -72,17 +73,7 @@ CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`alerta` (
   `municipalidade_id_municipalidade` INT NOT NULL,
   PRIMARY KEY (`id_upload`),
   INDEX `fk_alerta_usuario_idx` (`usuario_id_usuario` ASC) VISIBLE,
-  INDEX `fk_alerta_municipalidade1_idx` (`municipalidade_id_municipalidade` ASC) VISIBLE,
-  CONSTRAINT `fk_alerta_usuario`
-    FOREIGN KEY (`usuario_id_usuario`)
-    REFERENCES `arborizacao_inteligente`.`usuario` (`id_usuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_alerta_municipalidade1`
-    FOREIGN KEY (`municipalidade_id_municipalidade`)
-    REFERENCES `arborizacao_inteligente`.`municipalidade` (`id_municipalidade`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  INDEX `fk_alerta_municipalidade1_idx` (`municipalidade_id_municipalidade` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
