@@ -1,30 +1,52 @@
-import db from '../config/db.js';
+import { DataTypes } from 'sequelize';
+import { underscoredIf } from 'sequelize/lib/utils';
 
-const userModel = {
-    async create(user) {
-        const {nome, email, cpf, data_nascimento, cep, estado, cidade, senha} = user;
+export default (sequelize, DataTypes) => {
+    const User = sequelize.define('User', {
+        id_usuario: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        nome: {
+            type: DataTypes.STRING(100),
+            allowNull: false
+        },
+        email: {
+            type: DataTypes.STRING(100),
+            allowNull: false,
+            unique: true
+        },
+        cpf: {
+            type: DataTypes.STRING(11),
+            allowNull: false,
+            unique: true
+        },
+        data_nascimento: {
+            type: DataTypes.DATEONLY,
+            allowNull: false
+        },
+        cep: {
+            type: DataTypes.STRING(8),
+            allowNull: false
+        },
+        estado: {
+            type: DataTypes.STRING(45),
+            allowNull: false
+        },
+        cidade: {
+            type: DataTypes.STRING(45),
+            allowNull: false
+        },
+        senha: {
+            type: DataTypes.STRING(255),
+            allowNull: false
+        }
+    }, {
+            tableName: 'usuarios',
+            timestamps: true,
+            underscored: true,
+    });
 
-        const query = `
-            INSERT INTO usuario (nome, email, cpf, data_nascimento, cep, estado, cidade, senha) VALUES (?, ?, ?, ?, ?, ?, ?, ?);
-        `;
-
-        const [result] = await db.execute(query, [nome, email, cpf, data_nascimento, cep, estado, cidade, senha]);
-
-        return {
-            id: result.insertId,
-            nome, email, cpf, data_nascimento, cep, estado, cidade
-        };
-    },
-
-    async findByEmail(email) {
-        const query = `SELECT * FROM usuario WHERE email = ?`;
-
-        const [rows] = await db.execute(query, [email]);
-
-        return rows[0];
-    }
-
-    
+    return User;
 };
-
-export default userModel;
