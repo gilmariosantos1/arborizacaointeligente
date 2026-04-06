@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { createUserController, userValidators } from '../controllers/userController.js';
 import validateRequest from '../middlewares/validateRequest.js';
-import db from '../models/index.js';
+import db from '../models/indexModel.js';
 
 const router = Router();
 
