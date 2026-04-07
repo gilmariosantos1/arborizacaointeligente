@@ -40,7 +40,7 @@ export const userValidators = {
       .isLength({ min: 2 })
       .withMessage('Cidade deve ter no mínimo 2 caracteres'),
 
-    body('dataNascimento')
+    body('data_nascimento')
       .isISO8601()
       .toDate()
       .withMessage('Data de nascimento inválida. Use o formato YYYY-MM-DD'),
@@ -86,7 +86,7 @@ export const userValidators = {
       .isLength({ min: 2 })
       .withMessage('Cidade deve ter no mínimo 2 caracteres'),
 
-    body('dataNascimento')
+    body('data_nascimento')
       .optional()
       .isISO8601()
       .toDate()
@@ -99,7 +99,7 @@ export const userValidators = {
 export const createUserController = (UserModel) => ({
   cadastrar: async (req, res) => {
     try {
-      const { nome, email, senha, cpf, cep, estado, cidade, dataNascimento } = req.body;
+      const { nome, email, senha, cpf, cep, estado, cidade, data_nascimento } = req.body;
 
       const existente = await UserModel.findOne({ where: { email } });
       if (existente) {
@@ -116,7 +116,7 @@ export const createUserController = (UserModel) => ({
         cep,
         estado,
         cidade,
-        dataNascimento,
+        data_nascimento,
       });
 
       const { senha: _, ...dados } = user.toJSON();

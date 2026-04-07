@@ -2,10 +2,12 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import db from './config/db.js';
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config({
   path: '../.env'
 });
+
 const app = express();
 
 app.use(cors());
@@ -26,15 +28,15 @@ async function testConnection() {
 testConnection();
 
 app.get('/', (req, res) => {
-    res.json({
-        message: 'API funcionando'
-    });
-    console.log(process.env.PORT);
+  res.json({
+    message: 'API funcionando'
+  });
 });
+
+app.use(userRoutes);
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
-

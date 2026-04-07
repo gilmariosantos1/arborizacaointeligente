@@ -12,7 +12,7 @@ export default function Cadastro() {
     nome: '',
     email: '',
     cpf: '',
-    dataaNascimento: '',
+    data_nascimento: '',
     cep: '',
     estado: '',
     cidade: '',
@@ -20,7 +20,7 @@ export default function Cadastro() {
     confirmaSenha: '',
     termo: false
   })
-
+ console.log(formData);
   const [errors, setErrors] = useState({})
   const [isLoading, setIsLoading] = useState(false)
 
@@ -49,8 +49,8 @@ export default function Cadastro() {
       newErrors.cpf = 'CPF é obrigatório'
     }
 
-    if (!formData.dataaNascimento) {
-      newErrors.dataaNascimento = 'Data de nascimento é obrigatória'
+    if (!formData.data_nascimento) {
+      newErrors.data_nascimento = 'Data de nascimento é obrigatória'
     }
 
     if (!formData.cep) {
@@ -91,7 +91,9 @@ export default function Cadastro() {
     try {
       setIsLoading(true);
 
-      const response = await createUser(formData);
+      const { confirmaSenha, ...userData } = formData;
+
+      const response = await createUser(userData);
 
       console.log(response.data);
 
@@ -106,6 +108,7 @@ export default function Cadastro() {
         estado: '',
         cidade: '',
         senha: '',
+        confirmaSenha: '',
         termo: false
       });
 
@@ -197,11 +200,11 @@ export default function Cadastro() {
                 <FormInput
                   label="Data de Nascimento"
                   type="date"
-                  id="dataaNascimento"
-                  name="dataaNascimento"
-                  value={formData.dataaNascimento}
+                  id="data_nascimento"
+                  name="data_nascimento"
+                  value={formData.data_nascimento}
                   onChange={handleChange}
-                  error={errors.dataaNascimento}
+                  error={errors.data_nascimento}
                   required
                 />
 

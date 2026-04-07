@@ -1,5 +1,4 @@
 import { DataTypes } from 'sequelize';
-import { underscoredIf } from 'sequelize/lib/utils';
 
 export default (sequelize, DataTypes) => {
     const User = sequelize.define('User', {
