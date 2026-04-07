@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import FormInput from '../components/FormInput'
 import Button from '../components/Button'
 import styles from '../styles/Cadastro.module.css'
+import { createUser } from '../services/userService';
 
 export default function Cadastro() {
   const [formData, setFormData] = useState({
@@ -82,33 +83,50 @@ export default function Cadastro() {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    const newErrors = validateForm()
+  e.preventDefault();
 
-    if (Object.keys(newErrors).length === 0) {
-      setIsLoading(true)
-      // Simular envio de dados
-      setTimeout(() => {
-        console.log('Cadastro:', formData)
-        setIsLoading(false)
-        alert('Cadastro realizado com sucesso!')
-        setFormData({
-          nome: '',
-          email: '',
-          cpf: '',
-          dataaNascimento: '',
-          cep: '',
-          estado: '',
-          cidade: '',
-          senha: '',
-          confirmaSenha: '',
-          termo: false
-        })
-      }, 1000)
-    } else {
-      setErrors(newErrors)
+  const newErrors = validateForm();
+
+  if (Object.keys(newErrors).length === 0) {
+    try {
+      setIsLoading(true);
+
+      const response = await createUser(formData);
+
+      console.log(response.data);
+
+      alert('Cadastro realizado com sucesso!');
+
+      setFormData({
+        nome: '',
+        email: '',
+        cpf: '',
+        data_nascimento: '',
+        cep: '',
+        estado: '',
+        cidade: '',
+        senha: '',
+        termo: false
+      });
+
+    } catch (error) {
+
+      console.error(error);
+
+      if (error.response) {
+        alert(error.response.data.message);
+      } else {
+        alert('Erro ao conectar com o servidor');
+      }
+
+    } finally {
+      setIsLoading(false);
     }
+
+  } else {
+    setErrors(newErrors);
   }
+};
 
   return (
     <div className={styles.container}>
