@@ -15,7 +15,7 @@ app.use(express.json());
 
 async function testConnection() {
   try {
-    const connection = await db.getConnection();
+    // const connection = await db.getConnection();
 
     console.log('✅ Banco conectado com sucesso!');
 
