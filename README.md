@@ -63,6 +63,20 @@ Cidades mal arborizadas</p>
     <a href="" target="_blank">Café</a>
     <div style="padding: 5px;">Combustível</div>
     </td>
+    <br>
+    <div style="padding: 5px;">Implementando o Sistema Gerando MYSQL (SO - GNU/Linux) </div>
+    <div>
+        ## 1. Cria o bando de dados
+        CREATE DATABASE arborizacao_inteligente <br>
+        ## 2. Criar o usuário
+        CREATE USER arboriza@localhost IDENTIFIED BY 'SuaSenha'; <br>
+        ## 3. Conceder privilégios no banco de dados específico
+        GRANT ALL PRIVILEGES ON arborizacao_inteligente.* TO arboriza@localhost; <br>
+        ## 4. Atualizar privilégios
+        FLUSH PRIVILEGES;
+    </div>
+    
+    </td>
 </table>
 <p align="center"> 
   <img src="#">
