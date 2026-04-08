@@ -66,16 +66,15 @@ Cidades mal arborizadas</p>
     <br>
     <div style="padding: 5px;">Implementando o Sistema Gerando MYSQL (SO - GNU/Linux) </div>
     <div>
-        ## 1. Cria o bando de dados
+        ## 1. Cria o bando de dados <br>
         CREATE DATABASE arborizacao_inteligente <br>
-        ## 2. Criar o usuário
+        ## 2. Criar o usuário <br>
         CREATE USER arboriza@localhost IDENTIFIED BY 'SuaSenha'; <br>
-        ## 3. Conceder privilégios no banco de dados específico
+        ## 3. Conceder privilégios no banco de dados específico <br>
         GRANT ALL PRIVILEGES ON arborizacao_inteligente.* TO arboriza@localhost; <br>
-        ## 4. Atualizar privilégios
+        ## 4. Atualizar privilégios <br>
         FLUSH PRIVILEGES;
     </div>
-    
     </td>
 </table>
 <p align="center"> 
