@@ -64,7 +64,7 @@ Cidades mal arborizadas</p>
     <div style="padding: 5px;">Combustível</div>
     </td>
     <br>
-    <div style="padding: 5px;">Implementando o Sistema Gerando MYSQL (SO - GNU/Linux) </div>
+    <div style="padding: 5px;">Implementando o Sistema com Banco de Dados MYSQL (SO - GNU/Linux) </div>
     <div>
         ## 1. Cria o bando de dados <br>
         CREATE DATABASE arborizacao_inteligente <br>
