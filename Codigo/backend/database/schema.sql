@@ -27,6 +27,8 @@ CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`usuarios` (
   `estado` VARCHAR(45) NOT NULL,
   `cidade` VARCHAR(45) NOT NULL,
   `senha` VARCHAR(255) NOT NULL,
+  `created_at` DATE NULL,
+  `updated_at` DATE NULL,
   PRIMARY KEY (`id_usuario`),
   UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE)
 ENGINE = InnoDB;
@@ -41,6 +43,8 @@ CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`contatos` (
   `email` VARCHAR(100) NOT NULL,
   `assunto` VARCHAR(45) NOT NULL,
   `mensagem` TEXT(300) NOT NULL,
+  `created_at` DATE NULL,
+  `updated_at` DATE NULL,
   PRIMARY KEY (`id_contato`))
 ENGINE = InnoDB;
 
@@ -54,6 +58,8 @@ CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`municipalidades` (
   `estado` VARCHAR(45) NOT NULL,
   `cidade` VARCHAR(45) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
+  `created_at` DATE NULL,
+  `updated_at` DATE NULL,
   PRIMARY KEY (`id_municipalidade`))
 ENGINE = InnoDB;
 
@@ -69,6 +75,8 @@ CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`alertas` (
   `longitude` FLOAT NOT NULL,
   `imagem_endereco` VARCHAR(255) NOT NULL,
   `data_alerta` DATETIME NOT NULL,
+  `created_at` DATE NULL,
+  `updated_at` DATE NULL,
   `usuario_id_usuario` INT NOT NULL,
   `municipalidade_id_municipalidade` INT NOT NULL,
   PRIMARY KEY (`id_upload`),
