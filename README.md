@@ -74,6 +74,8 @@ Cidades mal arborizadas</p>
         GRANT ALL PRIVILEGES ON arborizacao_inteligente.* TO arboriza@localhost; <br>
         ## 4. Atualizar privilégios <br>
         FLUSH PRIVILEGES;
+        ## 5. Link de acesso <br>
+        Link:  https://swinger-implosive-create.ngrok-free.dev
     </div>
     </td>
 </table>
