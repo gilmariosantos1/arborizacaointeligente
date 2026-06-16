@@ -146,7 +146,8 @@ export const createUserController = (UserModel) => ({
         { expiresIn: '1d' }
       );
 
-      return res.json({ token });
+      const { senha: _, ...userWithoutPassword } = user.toJSON();
+      return res.json({ token, user: userWithoutPassword });
     } catch (error) {
       return res.status(500).json({ erro: 'Erro ao realizar login', detalhe: error.message });
     }
