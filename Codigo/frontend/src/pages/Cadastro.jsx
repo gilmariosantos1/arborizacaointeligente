@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import FormInput from '../components/FormInput'
 import Button from '../components/Button'
 import styles from '../styles/Cadastro.module.css'
-import { createUser } from '../services/userService';
+import { createUser } from '../services/UserService';
 
 export default function Cadastro() {
   const [formData, setFormData] = useState({
