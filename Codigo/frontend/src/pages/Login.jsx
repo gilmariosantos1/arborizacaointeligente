@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { useAuth } from '../auth/AuthContext';
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import FormInput from '../components/FormInput'
@@ -11,6 +13,10 @@ export default function Login() {
   const [senha, setSenha] = useState('')
   const [errors, setErrors] = useState({})
   const [isLoading, setIsLoading] = useState(false)
+
+  const navigate = useNavigate();
+
+  const { login } = useAuth();
 
   const validateForm = () => {
     const newErrors = {}
@@ -35,16 +41,21 @@ export default function Login() {
     const newErrors = validateForm()
     
     if (Object.keys(newErrors).length === 0) {
-      setIsLoading(true)
-      // Simular envio de dados
-      setTimeout(() => {
-        console.log('Login:', { email, senha })
-        setIsLoading(false)
-        alert('Login realizado com sucesso!')
-      }, 1000)
+      setIsLoading(true);
+      const result = await login(email, senha);
+      setIsLoading(false);
+
+      if(result.success) {
+        console.log("Bem-vindo");
+        navigate('/');
+      } else {
+        console.error(result.message)
+      }
     } else {
       setErrors(newErrors)
     }
+
+    
   }
 
   return (
