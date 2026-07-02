@@ -1,13 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import FormInput from '../components/FormInput'
+import FormSelect from '../components/FormSelect'
 import Button from '../components/Button'
 import styles from '../styles/Cadastro.module.css'
 import { createUser } from '../services/UserService';
 
 export default function Cadastro() {
+  const [cidades, setCidades] = useState([]);
+  const [estados, setEstados] = useState([]);
+  const [loadingCidades, setLoadingCidades] = useState(false);
+
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
@@ -20,15 +25,55 @@ export default function Cadastro() {
     confirmaSenha: '',
     termo: false
   })
- console.log(formData);
   const [errors, setErrors] = useState({})
   const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    async function fetchEstados() {
+      try {
+        const response = await fetch(
+          'https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome'
+        )
+        const data = await response.json()
+        setEstados(data)
+      } catch (error) {
+        console.error('Erro ao buscar estados:', error)
+      }
+    }
+    fetchEstados()
+  }, [])
+
+  useEffect(() => {
+    if (!formData.estado) {
+      setCidades([])
+      return
+    }
+
+    async function fetchCidades() {
+      try {
+        setLoadingCidades(true)
+        const response = await fetch(
+          `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${formData.estado}/municipios`
+        )
+        const data = await response.json()
+        setCidades(data)
+      } catch (error) {
+        console.error('Erro ao buscar cidades:', error)
+      } finally {
+        setLoadingCidades(false)
+      }
+    }
+
+    fetchCidades()
+  }, [formData.estado])
+
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === 'checkbox' ? checked : value,
+      ...(name === 'estado' ? { cidade: '' } : {})
     }))
   }
 
@@ -83,58 +128,58 @@ export default function Cadastro() {
   }
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const newErrors = validateForm();
+    const newErrors = validateForm();
 
-  if (Object.keys(newErrors).length === 0) {
-    try {
-      setIsLoading(true);
+    if (Object.keys(newErrors).length === 0) {
+      try {
+        setIsLoading(true);
 
-      const { confirmaSenha, ...userData } = formData;
+        const { confirmaSenha, ...userData } = formData;
 
-      const response = await createUser(userData);
+        const response = await createUser(userData);
 
-      console.log(response.data);
+        console.log(response.data);
 
-      alert('Cadastro realizado com sucesso!');
+        alert('Cadastro realizado com sucesso!');
 
-      setFormData({
-        nome: '',
-        email: '',
-        cpf: '',
-        data_nascimento: '',
-        cep: '',
-        estado: '',
-        cidade: '',
-        senha: '',
-        confirmaSenha: '',
-        termo: false
-      });
+        setFormData({
+          nome: '',
+          email: '',
+          cpf: '',
+          data_nascimento: '',
+          cep: '',
+          estado: '',
+          cidade: '',
+          senha: '',
+          confirmaSenha: '',
+          termo: false
+        });
 
-    } catch (error) {
+      } catch (error) {
 
-      console.error(error);
+        console.error(error);
 
-      if (error.response) {
-        alert(error.response.data.message);
-      } else {
-        alert('Erro ao conectar com o servidor');
+        if (error.response) {
+          alert(error.response.data.message);
+        } else {
+          alert('Erro ao conectar com o servidor');
+        }
+
+      } finally {
+        setIsLoading(false);
       }
 
-    } finally {
-      setIsLoading(false);
+    } else {
+      setErrors(newErrors);
     }
-
-  } else {
-    setErrors(newErrors);
-  }
-};
+  };
 
   return (
     <div className={styles.container}>
       <Header />
-      
+
       <main className={styles.main}>
         <div className={styles.formWrapper}>
           <div className={styles.welcomeSection}>
@@ -220,29 +265,42 @@ export default function Cadastro() {
                   required
                 />
 
-                <FormInput
+                <FormSelect
                   label="Estado"
-                  type="text"
                   id="estado"
                   name="estado"
-                  placeholder="Ex: Sergipe"
                   value={formData.estado}
                   onChange={handleChange}
                   error={errors.estado}
                   required
-                />
+                >
+                  <option value="">Selecione o estado</option>
+                  {estados.map((uf) => (
+                    <option key={uf.id} value={uf.sigla}>
+                      {uf.sigla}
+                    </option>
+                  ))}
+                </FormSelect>
 
-                <FormInput
+                <FormSelect
                   label="Cidade"
-                  type="text"
                   id="cidade"
                   name="cidade"
-                  placeholder="Ex: Aracaju"
                   value={formData.cidade}
                   onChange={handleChange}
                   error={errors.cidade}
                   required
-                />
+                >
+                  <option value="">
+                    {loadingCidades ? 'Carregando...' : 'Selecione a cidade'}
+                  </option>
+                  {cidades.map((cidade) => (
+                    <option key={cidade.id} value={cidade.nome}>
+                      {cidade.nome}
+                    </option>
+                  ))}
+                </FormSelect>
+                
               </div>
 
               <div className={styles.passwordGrid}>
