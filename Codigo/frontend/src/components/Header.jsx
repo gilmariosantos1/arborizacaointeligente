@@ -2,11 +2,14 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../styles/Header.module.css'
 import Button from './Button'
+import { useAuth } from '../auth/AuthContext'
 
 const menuIcon = '/imagens/Menu.svg'
 
 export default function Header() {
   const [navOpen, setNavOpen] = useState(false)
+
+  const {signed, user} = useAuth()
 
   const toggleNav = () => {
     setNavOpen(!navOpen)
@@ -30,6 +33,10 @@ export default function Header() {
           <Link to="/contato">Contato</Link>
           <Link to="/upload">Alerta verde</Link>
         </nav>
+
+        {/* {signed && (
+
+        )} */}
 
         <div className={styles.authButtons}>
           <Link to="/login" className={styles.loginLink}>

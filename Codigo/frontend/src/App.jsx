@@ -7,9 +7,11 @@ import Aplicativo from './pages/Aplicativo'
 import Contato from './pages/Contato'
 import Upload from './pages/Upload'
 import RedefinirSenha from './pages/RedefinirSenha'
+import { AuthProvider } from './auth/AuthContext'
 
 function App() {
   return (
+    <AuthProvider>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -22,6 +24,7 @@ function App() {
         <Route path="/redefinir-senha" element={<RedefinirSenha />} />
       </Routes>
     </Router>
+    </AuthProvider>
   )
 }
 

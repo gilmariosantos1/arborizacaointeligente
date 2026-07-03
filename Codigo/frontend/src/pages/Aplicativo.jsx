@@ -1,8 +1,18 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import styles from '../styles/Aplicativo.module.css'
+import { useAuth } from '../auth/AuthContext'
+
+
 
 export default function Aplicativo() {
+
+  const { signed, user } = useAuth();
+
+  if(signed) {
+    console.log("Logado")
+  }  
+
   return (
     <div className={styles.container}>
       <Header />
