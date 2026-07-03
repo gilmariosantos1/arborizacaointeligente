@@ -9,7 +9,7 @@ const menuIcon = '/imagens/Menu.svg'
 export default function Header() {
   const [navOpen, setNavOpen] = useState(false)
 
-  const {signed, user} = useAuth()
+  const {signed, user, logout} = useAuth()
 
   const toggleNav = () => {
     setNavOpen(!navOpen)
@@ -18,6 +18,8 @@ export default function Header() {
   const closeNav = () => {
     setNavOpen(false)
   }
+
+
 
   return (
     <header className={styles.header}>
@@ -34,11 +36,15 @@ export default function Header() {
           <Link to="/upload">Alerta verde</Link>
         </nav>
 
-        {/* {signed && (
-
-        )} */}
-
-        <div className={styles.authButtons}>
+        {signed ? (
+          <div className={styles.authButtons}>
+            <Link onClick={logout} className={styles.loginLink}>
+            <span>Sair</span>
+            <img className={styles.imageLogout} src="/imagens/logout.png" alt="" />
+          </Link> 
+          </div>
+        ) : (
+          <div className={styles.authButtons}>
           <Link to="/login" className={styles.loginLink}>
             <span>Entrar</span>
           </Link>
@@ -46,6 +52,9 @@ export default function Header() {
             Cadastre-se
           </Button>
         </div>
+        )}
+
+        
 
         <button className={styles.menuBtn} onClick={toggleNav} aria-label="Menu">
           <img src={menuIcon} alt="Ícone do menu de opções" />

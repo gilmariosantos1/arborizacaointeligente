@@ -127,6 +127,11 @@
   transform: scale(1.05);
 }
 
+.imageLogout {
+  width: 20px;
+  margin-left: 7px;
+}
+
 /* Menu Mobile */
 .menuBtn {
   display: none;
