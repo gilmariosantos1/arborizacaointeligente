@@ -9,7 +9,7 @@ const menuIcon = '/imagens/Menu.svg'
 export default function Header() {
   const [navOpen, setNavOpen] = useState(false)
 
-  const {signed, user, logout} = useAuth()
+  const { signed, user, logout } = useAuth()
 
   const toggleNav = () => {
     setNavOpen(!navOpen)
@@ -39,22 +39,22 @@ export default function Header() {
         {signed ? (
           <div className={styles.authButtons}>
             <Link onClick={logout} className={styles.loginLink}>
-            <span>Sair</span>
-            <img className={styles.imageLogout} src="/imagens/logout.png" alt="" />
-          </Link> 
+              <span>Sair</span>
+              <img className={styles.imageLogout} src="/imagens/logout.png" alt="" />
+            </Link>
           </div>
         ) : (
           <div className={styles.authButtons}>
-          <Link to="/login" className={styles.loginLink}>
-            <span>Entrar</span>
-          </Link>
-          <Button component={Link} to="/cadastro" variant="primary" size="medium">
-            Cadastre-se
-          </Button>
-        </div>
+            <Link to="/login" className={styles.loginLink}>
+              <span>Entrar</span>
+            </Link>
+            <Button component={Link} to="/cadastro" variant="primary" size="medium">
+              Cadastre-se
+            </Button>
+          </div>
         )}
 
-        
+
 
         <button className={styles.menuBtn} onClick={toggleNav} aria-label="Menu">
           <img src={menuIcon} alt="Ícone do menu de opções" />
@@ -71,12 +71,24 @@ export default function Header() {
             <Link to="/contato" className={styles.navMobileLink} onClick={closeNav}>Contato</Link>
             <Link to="/upload" className={styles.navMobileLink} onClick={closeNav}>Upload</Link>
             <hr className={styles.divider} />
-            <Link to="/login" className={styles.navMobileLink} onClick={closeNav}>Entrar</Link>
-            <Link to="/cadastro">
-              <Button variant="primary" size="medium" isFullWidth onClick={closeNav} className={styles.mobileSignup}>
-                Cadastre-se
-              </Button>
-            </Link>
+
+            {signed ? (
+                <Link onClick={logout} className={styles.loginNavLink}>
+                  <span>Sair</span>
+                  <img className={styles.imageLogoutNav} src="/imagens/logout.png" alt="" />
+                </Link>
+            ) : (
+              <div>
+                <Link to="/login" className={styles.navMobileLink} onClick={closeNav}>Entrar</Link>
+                <Link to="/cadastro">
+                  <Button variant="primary" size="medium" isFullWidth onClick={closeNav} className={styles.mobileSignup}>
+                    Cadastre-se
+                  </Button>
+                </Link>
+              </div>
+            )}
+
+
           </nav>
         </>
       )}

@@ -3,6 +3,7 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -14,6 +15,7 @@
     opacity: 0;
     transform: translateX(100%);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -24,6 +26,7 @@
   0% {
     background-color: transparent;
   }
+
   100% {
     background-color: var(--primary-yellow);
     color: var(--primary-blue);
@@ -121,6 +124,17 @@
   align-items: center;
 }
 
+.loginNavLink {
+  color: #000;
+  font-weight: 600;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+}
+
+
 .loginLink:hover {
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--primary-yellow);
@@ -128,6 +142,12 @@
 }
 
 .imageLogout {
+  width: 20px;
+  margin-left: 7px;
+}
+
+.imageLogoutNav {
+  filter: invert(100%);
   width: 20px;
   margin-left: 7px;
 }
