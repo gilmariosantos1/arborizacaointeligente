@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
+import alertaRoutes from './routes/alertaRoutes.js';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
   });
 });
 
-app.use(userRoutes);
+app.use('/users', userRoutes);
+app.use(alertaRoutes);
 
 export default app;
