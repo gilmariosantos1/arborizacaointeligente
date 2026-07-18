@@ -55,31 +55,35 @@ export default function Contato() {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    const newErrors = validateForm()
+    e.preventDefault();
 
-    if (Object.keys(newErrors).length === 0) {
-      setIsLoading(true)
+    const newErrors = validateForm();
 
-      setSubmitSuccess(true)
-      const envio = await contato(formData);
-      setIsLoading(false)
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors({});
+    setIsLoading(true);
+
+    try {
+      await contato(formData);
+
+      setSubmitSuccess(true);
       
-      setTimeout(() => setSubmitSuccess(false), 5000)
-      // Simular envio de dados
-      // setTimeout(() => {
-      //   console.log('Contato:', formData)
-      //   setIsLoading(false)
-      //   setFormData({ nome: '', email: '', assunto: '', mensagem: '' })
-        
+      setFormData({
+        nome: '',
+        email: '',
+        assunto: '',
+        mensagem: ''
+      });
 
-      //   setSubmitSuccess(true)
-      //   // Limpar mensagem de sucesso após 5 segundos
-      //   setTimeout(() => setSubmitSuccess(false), 5000)
-      // }, 1000)
-
-    } else {
-      setErrors(newErrors)
+    } catch (error) {
+      console.error(error);
+      alert("Erro ao enviar a mensagem.");
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -109,11 +113,11 @@ export default function Contato() {
   return (
     <div className={styles.container}>
       <Header />
-      
+
       <main className={styles.main}>
         {/* Hero Section */}
-        <Section 
-          className={styles.heroSection} 
+        <Section
+          className={styles.heroSection}
           hasBackground
           title="Entre em Contato"
           subtitle="Estamos aqui para ouvir suas ideias e responder suas dúvidas"
@@ -135,8 +139,8 @@ export default function Contato() {
         </Section>
 
         {/* Contact Form */}
-        <Section 
-          title="Envie uma Mensagem" 
+        <Section
+          title="Envie uma Mensagem"
           subtitle="Preencha o formulário abaixo e entraremos em contato em breve"
           hasBackground={true}
           variant="light"
