@@ -2,7 +2,7 @@ import api from "./api";
 
 export const login = async (email, senha) => {
     try {
-        const {data} = await api.post('/login', {email, senha})
+        const {data} = await api.post('/users/login', {email, senha})
         if(data.token) {
             localStorage.setItem('token', data.token)
             const loggedUser = data.user || data.usuario;

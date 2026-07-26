@@ -5,7 +5,9 @@ const { Alerta } = db
 export const criarAlerta = async (req, res) => {
   try {
     const { assunto, descricao, latitude, longitude, data_alerta, usuario_id_usuario, municipalidade_id_municipalidade } = req.body
-    const imagem_endereco = `/uploads/alertas/${req.file.filename}`
+    const imagem_endereco = req.file
+      ? `/uploads/imagens/${req.file.filename}`
+      : null
 
     const alerta = await Alerta.create({
       assunto,
@@ -15,7 +17,8 @@ export const criarAlerta = async (req, res) => {
       imagem_endereco,
       data_alerta,
       usuario_id_usuario,
-      municipalidade_id_municipalidade
+      // Se não informar municipalidade, usar fallback para 1 para evitar violação de NOT NULL
+      municipalidade_id_municipalidade: municipalidade_id_municipalidade || 1
     })
 
     res.status(201).json(alerta)
