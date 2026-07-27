@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -7,11 +8,16 @@ import FormSelect from '../components/FormSelect'
 import Button from '../components/Button'
 import styles from '../styles/Cadastro.module.css'
 import { createUser } from '../services/UserService';
+import { useAuth } from '../auth/AuthContext';
 
 export default function Cadastro() {
   const [cidades, setCidades] = useState([]);
   const [estados, setEstados] = useState([]);
   const [loadingCidades, setLoadingCidades] = useState(false);
+
+  const navigate = useNavigate()
+
+  const { signed, user, logout } = useAuth()
 
   const [formData, setFormData] = useState({
     nome: '',
@@ -178,7 +184,11 @@ export default function Cadastro() {
 
   return (
     <div className={styles.container}>
-      <Header />
+      {signed ? (
+        navigate("/")
+      ) : (
+        <div>
+          <Header />
 
       <main className={styles.main}>
         <div className={styles.formWrapper}>
@@ -362,6 +372,9 @@ export default function Cadastro() {
       </main>
 
       <Footer />
+        </div>
+      )}
+      
     </div>
   )
 }
