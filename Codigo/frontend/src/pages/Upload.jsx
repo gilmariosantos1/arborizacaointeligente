@@ -8,9 +8,11 @@ import Button from '../components/Button'
 import styles from '../styles/Upload.module.css'
 import { useAuth } from '../auth/AuthContext'
 import { createAlerta } from '../services/alertaService'
+import { login } from '../services/AuthService'
+import { useNavigate } from 'react-router-dom'
 
 export default function Upload() {
-  const { user } = useAuth()
+  const { signed, user } = useAuth()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [formData, setFormData] = useState({
     assunto: '',
@@ -21,6 +23,7 @@ export default function Upload() {
   })
   const [selectedLocation, setSelectedLocation] = useState(null)
   const [errors, setErrors] = useState({})
+  const navigate = useNavigate()
 
   const assuntoSuggestions = [
     'Queda de árvore',
@@ -155,7 +158,7 @@ export default function Upload() {
       dados.append('longitude', selectedLocation.lng)
       dados.append('data_alerta', new Date().toISOString().slice(0, 19).replace('T', ' '))
       dados.append('imagem', formData.imagem)
-      dados.append('usuario_id_usuario', user.id_usuario) 
+      dados.append('usuario_id_usuario', user.id_usuario)
       // municipalidade_id_municipalidade fica pendente por enquanto
       console.log(dados)
       await createAlerta(dados)
@@ -169,144 +172,167 @@ export default function Upload() {
   }
 
   return (
+
     <div className={styles.container}>
       <Header />
+      {signed ? (
+        <div className={styles.container_upload}>
 
-      <main className={styles.main}>
-        <h1>Envie sua imagem!</h1>
-        <p>
-          Envie uma imagem de uma árvore invasora <br /> e/ou de um local mal arborizado
-        </p>
-        <Button variant="primary" size="large" onClick={handleUpload}>
-          Upload
-        </Button>
-      </main>
 
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-        <div className={styles.modalContent}>
-          <h2>Reportar Problema de Arborização</h2>
+          <main className={styles.main}>
+            <h1>Envie sua imagem!</h1>
+            <p>
+              Envie uma imagem de uma árvore invasora <br /> e/ou de um local mal arborizado
+            </p>
+            <Button variant="primary" size="large" onClick={handleUpload}>
+              Upload
+            </Button>
+          </main>
 
-          <form onSubmit={handleSubmit} className={styles.uploadForm}>
-            {/* Assunto */}
-            <div className={styles.formGroup}>
-              <label htmlFor="assunto" className={styles.label}>
-                Assunto *
-              </label>
-              <input
-                id="assunto"
-                name="assunto"
-                type="text"
-                list="assunto-suggestions"
-                placeholder="Digite o assunto do problema..."
-                value={formData.assunto}
-                onChange={handleInputChange}
-                className={`${styles.input} ${errors.assunto ? styles.error : ''}`}
-              />
-              <datalist id="assunto-suggestions">
-                {assuntoSuggestions.map((suggestion, index) => (
-                  <option key={index} value={suggestion} />
-                ))}
-              </datalist>
-              {errors.assunto && <span className={styles.errorMsg}>{errors.assunto}</span>}
-            </div>
+          <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+            <div className={styles.modalContent}>
+              <h2>Reportar Problema de Arborização</h2>
 
-            {/* Endereço */}
-            <div className={styles.formGroup}>
-              <label htmlFor="endereco" className={styles.label}>
-                Endereço
-              </label>
-              <div className={styles.addressGroup}>
-                <input
-                  id="endereco"
-                  name="endereco"
-                  type="text"
-                  placeholder="Digite rua, cidade, bairro..."
-                  value={formData.endereco}
-                  onChange={handleInputChange}
-                  className={styles.addressInput}
-                />
-                <Button
-                  type="button"
-                  variant="secondary"
-                  size="small"
-                  onClick={handleAddressSearch}
-                  className={styles.searchButton}
-                >
-                  Buscar
-                </Button>
-              </div>
-            </div>
-
-            {/* Localização */}
-            <FormInput
-              label="Localização"
-              placeholder="Coordenadas serão preenchidas automaticamente"
-              value={formData.localizacao}
-              readOnly
-              error={errors.localizacao}
-            />
-
-            {/* Mapa */}
-            <MapSelector
-              onLocationSelect={handleLocationSelect}
-              selectedLocation={selectedLocation}
-            />
-
-            {/* Descrição */}
-            <div className={styles.formGroup}>
-              <label htmlFor="descricao" className={styles.label}>
-                Descrição *
-              </label>
-              <textarea
-                id="descricao"
-                name="descricao"
-                placeholder="Descreva o problema em detalhes..."
-                value={formData.descricao}
-                onChange={handleInputChange}
-                className={`${styles.textarea} ${errors.descricao ? styles.error : ''}`}
-                rows="4"
-              />
-              {errors.descricao && <span className={styles.errorMsg}>{errors.descricao}</span>}
-            </div>
-
-            {/* Upload de imagem */}
-            <div className={styles.formGroup}>
-              <label htmlFor="imagem" className={styles.label}>
-                Imagem *
-              </label>
-              <input
-                type="file"
-                id="imagem"
-                accept="image/*"
-                onChange={handleImageUpload}
-                className={`${styles.fileInput} ${errors.imagem ? styles.error : ''}`}
-              />
-              {formData.imagem && (
-                <div className={styles.imagePreview}>
-                  <img
-                    src={URL.createObjectURL(formData.imagem)}
-                    alt="Preview"
-                    className={styles.previewImg}
+              <form onSubmit={handleSubmit} className={styles.uploadForm}>
+                {/* Assunto */}
+                <div className={styles.formGroup}>
+                  <label htmlFor="assunto" className={styles.label}>
+                    Assunto *
+                  </label>
+                  <input
+                    id="assunto"
+                    name="assunto"
+                    type="text"
+                    list="assunto-suggestions"
+                    placeholder="Digite o assunto do problema..."
+                    value={formData.assunto}
+                    onChange={handleInputChange}
+                    className={`${styles.input} ${errors.assunto ? styles.error : ''}`}
                   />
+                  <datalist id="assunto-suggestions">
+                    {assuntoSuggestions.map((suggestion, index) => (
+                      <option key={index} value={suggestion} />
+                    ))}
+                  </datalist>
+                  {errors.assunto && <span className={styles.errorMsg}>{errors.assunto}</span>}
                 </div>
-              )}
-              {errors.imagem && <span className={styles.errorMsg}>{errors.imagem}</span>}
-            </div>
 
-            {/* Botões */}
-            <div className={styles.buttonGroup}>
-              <Button variant="secondary" type="button" onClick={handleCloseModal}>
-                Cancelar
-              </Button>
-              <Button variant="primary" type="submit">
-                Enviar
-              </Button>
+                {/* Endereço */}
+                <div className={styles.formGroup}>
+                  <label htmlFor="endereco" className={styles.label}>
+                    Endereço
+                  </label>
+                  <div className={styles.addressGroup}>
+                    <input
+                      id="endereco"
+                      name="endereco"
+                      type="text"
+                      placeholder="Digite rua, cidade, bairro..."
+                      value={formData.endereco}
+                      onChange={handleInputChange}
+                      className={styles.addressInput}
+                    />
+                    <Button
+                      type="button"
+                      variant="secondary"
+                      size="small"
+                      onClick={handleAddressSearch}
+                      className={styles.searchButton}
+                    >
+                      Buscar
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Localização */}
+                <FormInput
+                  label="Localização"
+                  placeholder="Coordenadas serão preenchidas automaticamente"
+                  value={formData.localizacao}
+                  readOnly
+                  error={errors.localizacao}
+                />
+
+                {/* Mapa */}
+                <MapSelector
+                  onLocationSelect={handleLocationSelect}
+                  selectedLocation={selectedLocation}
+                />
+
+                {/* Descrição */}
+                <div className={styles.formGroup}>
+                  <label htmlFor="descricao" className={styles.label}>
+                    Descrição *
+                  </label>
+                  <textarea
+                    id="descricao"
+                    name="descricao"
+                    placeholder="Descreva o problema em detalhes..."
+                    value={formData.descricao}
+                    onChange={handleInputChange}
+                    className={`${styles.textarea} ${errors.descricao ? styles.error : ''}`}
+                    rows="4"
+                  />
+                  {errors.descricao && <span className={styles.errorMsg}>{errors.descricao}</span>}
+                </div>
+
+                {/* Upload de imagem */}
+                <div className={styles.formGroup}>
+                  <label htmlFor="imagem" className={styles.label}>
+                    Imagem *
+                  </label>
+                  <input
+                    type="file"
+                    id="imagem"
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    className={`${styles.fileInput} ${errors.imagem ? styles.error : ''}`}
+                  />
+                  {formData.imagem && (
+                    <div className={styles.imagePreview}>
+                      <img
+                        src={URL.createObjectURL(formData.imagem)}
+                        alt="Preview"
+                        className={styles.previewImg}
+                      />
+                    </div>
+                  )}
+                  {errors.imagem && <span className={styles.errorMsg}>{errors.imagem}</span>}
+                </div>
+
+                {/* Botões */}
+                <div className={styles.buttonGroup}>
+                  <Button variant="secondary" type="button" onClick={handleCloseModal}>
+                    Cancelar
+                  </Button>
+                  <Button variant="primary" type="submit">
+                    Enviar
+                  </Button>
+                </div>
+              </form>
             </div>
-          </form>
+          </Modal>
         </div>
-      </Modal>
-
+      ) : (
+        <main className={styles.main}>
+          <h1>Para nos enviar um alerta é preciso ter uma conta!</h1>
+          <p>
+            Se ainda não tiver, crie sua conta gratuitamente agora! <br /> ou se já possui cadastro faça o login
+          </p>
+          <div className={styles.authButtons}>
+            <Button variant="primary" size="large" onClick={() => navigate("/cadastro")}>
+              Cadastrar
+            </Button>
+            <Button variant="primary" size="large" onClick={() => navigate("/login")}>
+              Entrar
+            </Button>
+          </div>
+        </main>
+      )}
       <Footer />
     </div>
+
+
+
   )
 }

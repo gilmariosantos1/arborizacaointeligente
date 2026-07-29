@@ -205,6 +205,18 @@
     white-space: nowrap;
 }
 
+.authButtons {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-shrink: 0;
+    animation: _slideDown_w2fzb_1 0.5s ease-out;
+}
+
+.container_upload {
+    margin: 70px 0px;
+}
+
 @media (max-width: 768px) {
     .main {
         padding: 40px 15px;
