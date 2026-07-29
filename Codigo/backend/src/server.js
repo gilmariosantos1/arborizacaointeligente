@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
+import alertaRoutes from './routes/alertaRoutes.js';
 import ContatosRoutes from './routes/contatosRoutes.js';
 
 dotenv.config();
@@ -17,7 +18,8 @@ app.get('/', (req, res) => {
   });
 });
 
-app.use(userRoutes);
+app.use('/users', userRoutes);
+app.use(alertaRoutes);
 app.use('/contatos', ContatosRoutes);
 
 export default app;

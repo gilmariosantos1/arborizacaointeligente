@@ -6,8 +6,11 @@ import MapSelector from '../components/MapSelector'
 import FormInput from '../components/FormInput'
 import Button from '../components/Button'
 import styles from '../styles/Upload.module.css'
+import { useAuth } from '../auth/AuthContext'
+import { createAlerta } from '../services/alertaService'
 
 export default function Upload() {
+  const { user } = useAuth()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [formData, setFormData] = useState({
     assunto: '',
@@ -139,14 +142,29 @@ export default function Upload() {
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
-    if (validateForm()) {
-      // Aqui você pode implementar o envio dos dados
-      console.log('Dados do formulário:', formData)
+    if (!validateForm()) return
+
+    try {
+      const dados = new FormData()
+      dados.append('assunto', formData.assunto)
+      dados.append('descricao', formData.descricao)
+      dados.append('latitude', selectedLocation.lat)
+      dados.append('longitude', selectedLocation.lng)
+      dados.append('data_alerta', new Date().toISOString().slice(0, 19).replace('T', ' '))
+      dados.append('imagem', formData.imagem)
+      dados.append('usuario_id_usuario', user.id_usuario) 
+      // municipalidade_id_municipalidade fica pendente por enquanto
+      console.log(dados)
+      await createAlerta(dados)
+
       alert('Upload realizado com sucesso!')
       handleCloseModal()
+    } catch (error) {
+      console.error('Erro ao enviar alerta:', error)
+      alert('Erro ao enviar o alerta. Tente novamente.')
     }
   }
 

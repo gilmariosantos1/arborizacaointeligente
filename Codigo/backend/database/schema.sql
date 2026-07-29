@@ -75,6 +75,7 @@ CREATE TABLE IF NOT EXISTS `arborizacao_inteligente`.`alertas` (
   `longitude` FLOAT NOT NULL,
   `imagem_endereco` VARCHAR(255) NOT NULL,
   `data_alerta` DATETIME NOT NULL,
+  `status` ENUM('pendente', 'em_analise', 'resolvido', 'rejeitado') NOT NULL DEFAULT 'pendente',
   `created_at` DATE NULL,
   `updated_at` DATE NULL,
   `usuario_id_usuario` INT NOT NULL,
