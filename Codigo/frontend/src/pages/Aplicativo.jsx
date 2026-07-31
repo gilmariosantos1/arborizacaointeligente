@@ -17,10 +17,6 @@ export default function Aplicativo() {
     <div className={styles.container}>
       <Header />
 
-      
-
-      <section className={styles.verde}></section>
-
       <section className={styles.aplicativo}>
         <h2>Aplicativo</h2>
         <div className={styles.conteudo}>
