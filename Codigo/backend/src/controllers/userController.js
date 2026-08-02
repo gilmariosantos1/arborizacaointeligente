@@ -1,7 +1,9 @@
 // controllers/userController.js
 import { body, param } from 'express-validator';
 import bcrypt from 'bcrypt';
+import crypto from 'crypto';
 import jwt from 'jsonwebtoken';
+import nodemailer from 'nodemailer';
 
 // ─── Validators ───────────────────────────────────────────────────────────────
 
@@ -51,6 +53,15 @@ export const userValidators = {
     body('senha').notEmpty().withMessage('Senha é obrigatória'),
   ],
 
+  forgotPassword: [
+    body('email').isEmail().normalizeEmail().withMessage('E-mail inválido'),
+  ],
+
+  resetPassword: [
+    body('token').notEmpty().withMessage('Token inválido'),
+    body('senha').isString().isLength({ min: 6 }).withMessage('Senha deve ter no mínimo 6 caracteres'),
+  ],
+
   update: [
     param('id').isInt({ min: 1 }).withMessage('ID inválido'),
     body('nome').optional().isString().trim().isLength({ min: 2 }).withMessage('Nome deve ter no mínimo 2 caracteres'),
@@ -95,6 +106,50 @@ export const userValidators = {
 };
 
 // ─── Factory ──────────────────────────────────────────────────────────────────
+
+const createMailerTransport = () => {
+  if (process.env.SMTP_URL) {
+    return nodemailer.createTransport(process.env.SMTP_URL);
+  }
+
+  const smtpPass = (process.env.SMTP_PASS || '').replace(/\s+/g, '');
+  const hasSmtpConfig = Boolean(process.env.SMTP_HOST || process.env.SMTP_SERVICE || process.env.SMTP_USER || smtpPass);
+
+  if (hasSmtpConfig) {
+    return nodemailer.createTransport({
+      service: process.env.SMTP_SERVICE || undefined,
+      host: process.env.SMTP_HOST || undefined,
+      port: process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : undefined,
+      secure: process.env.SMTP_SECURE === 'true',
+      family: 4,
+      requireTLS: process.env.SMTP_REQUIRE_TLS !== 'false',
+      auth: process.env.SMTP_USER || smtpPass
+        ? {
+            user: process.env.SMTP_USER || '',
+            pass: smtpPass,
+          }
+        : undefined,
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 10000,
+    });
+  }
+
+  if (process.env.NODE_ENV !== 'production') {
+    return nodemailer.createTransport({
+      streamTransport: true,
+      newline: 'unix',
+      buffer: true,
+    });
+  }
+
+  return nodemailer.createTransport({
+    host: 'localhost',
+    port: 25,
+    secure: false,
+    ignoreTLS: true,
+  });
+};
 
 export const createUserController = (UserModel) => ({
   cadastrar: async (req, res) => {
@@ -142,7 +197,7 @@ export const createUserController = (UserModel) => ({
 
       const token = jwt.sign(
         { id: user.id, email: user.email },
-        process.env.JWT_SECRET,
+        process.env.JWT_SECRET || 'dev-secret-key',
         { expiresIn: '1d' }
       );
 
@@ -150,6 +205,81 @@ export const createUserController = (UserModel) => ({
       return res.json({ token, user: userWithoutPassword });
     } catch (error) {
       return res.status(500).json({ erro: 'Erro ao realizar login', detalhe: error.message });
+    }
+  },
+
+  forgotPassword: async (req, res) => {
+    try {
+      const { email } = req.body;
+      const user = await UserModel.findOne({ where: { email } });
+
+      if (!user) {
+        return res.status(200).json({ message: 'Se o e-mail existir, enviaremos instruções para redefinir a senha.' });
+      }
+
+      const token = crypto.randomBytes(32).toString('hex');
+      const expiresAt = new Date(Date.now() + 60 * 60 * 1000);
+
+      await user.update({
+        password_reset_token: token,
+        password_reset_expires_at: expiresAt,
+      });
+
+      const resetLink = `${process.env.FRONTEND_URL || 'http://localhost:5173'}/redefinir-senha?token=${token}`;
+      const senderEmail = process.env.SMTP_FROM || 'no-reply@arborizacaointeligente.com';
+
+      const transporter = createMailerTransport();
+
+      const mailOptions = {
+        from: senderEmail,
+        to: email,
+        subject: 'Recuperação de senha',
+        text: `Clique no link para redefinir sua senha:\n\n${resetLink}\n\nSe você não solicitou, ignore esta mensagem.`,
+        html: `<p>Clique no link para redefinir sua senha:</p><p><a href="${resetLink}">${resetLink}</a></p><p>Se você não solicitou, ignore esta mensagem.</p>`,
+      };
+
+      let emailSent = false;
+      try {
+        await transporter.sendMail(mailOptions);
+        emailSent = true;
+      } catch (mailerError) {
+        console.error('Erro ao enviar e-mail de recuperação:', mailerError);
+      }
+
+      return res.status(200).json({
+        message: emailSent
+          ? 'Enviamos as instruções para o seu e-mail.'
+          : 'Não foi possível enviar o e-mail. Verifique a configuração de SMTP.',
+        resetLink: process.env.NODE_ENV === 'development' ? resetLink : undefined,
+      });
+    } catch (error) {
+      return res.status(500).json({ erro: 'Erro ao solicitar redefinição de senha', detalhe: error.message });
+    }
+  },
+
+  resetPassword: async (req, res) => {
+    try {
+      const { token, senha } = req.body;
+
+      const user = await UserModel.findOne({ where: { password_reset_token: token } });
+      if (!user) {
+        return res.status(400).json({ erro: 'Token inválido ou expirado.' });
+      }
+
+      if (!user.password_reset_expires_at || new Date(user.password_reset_expires_at) < new Date()) {
+        return res.status(400).json({ erro: 'Token inválido ou expirado.' });
+      }
+
+      const senhaHash = await bcrypt.hash(senha, 10);
+      await user.update({
+        senha: senhaHash,
+        password_reset_token: null,
+        password_reset_expires_at: null,
+      });
+
+      return res.json({ message: 'Senha redefinida com sucesso.' });
+    } catch (error) {
+      return res.status(500).json({ erro: 'Erro ao redefinir senha', detalhe: error.message });
     }
   },
 
