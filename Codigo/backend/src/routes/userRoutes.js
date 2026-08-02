@@ -22,6 +22,20 @@ router.post(
   controllers.login
 );
 
+router.post(
+  '/forgot-password',
+  userValidators.forgotPassword,
+  validateRequest,
+  controllers.forgotPassword
+);
+
+router.post(
+  '/reset-password',
+  userValidators.resetPassword,
+  validateRequest,
+  controllers.resetPassword
+);
+
 // Rotas protegidas
 router.get('/', controllers.listar);
 

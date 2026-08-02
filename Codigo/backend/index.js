@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3000;
 
 (async () => {
   try {
-    await db.sequelize.sync({ force: false }); // force: true para recriar tabelas
+    await db.sequelize.sync({ alter: true });
     console.log("Banco de dados sincronizado.");
 
     app.listen(PORT, () => {
