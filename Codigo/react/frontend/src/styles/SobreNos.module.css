@@ -1,0 +1,216 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+}
+
+.heroSection {
+  padding: 80px var(--spacing-md) !important;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #0a0bcd 100%) !important;
+  color: white;
+  text-align: center;
+}
+
+.heroSection h2,
+.heroSection :global(.title) {
+  color: var(--primary-yellow) !important;
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+.heroSection p,
+.heroSection :global(.subtitle) {
+  color: #e0e0e0 !important;
+}
+
+/* Story Content */
+.storyContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+  margin-top: var(--spacing-xl);
+}
+
+.storyImage {
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.storyText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.storyText p {
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.storyText strong {
+  color: var(--primary-blue);
+}
+
+/* Mission Grid */
+.missionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.principleCard {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+}
+
+.principleIcon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.principleCard h3 {
+  color: var(--primary-blue);
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.principleCard p {
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Tech Section */
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.techCard {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.techImage {
+  width: 100%;
+  max-width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin: 0 auto;
+}
+
+.techCard h3 {
+  color: var(--primary-blue);
+  margin: 0;
+}
+
+.techCard p {
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* Team Grid */
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.teamCard {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.avatar {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.teamCard h3 {
+  color: var(--primary-blue);
+  margin: 0;
+}
+
+.role {
+  color: var(--primary-green);
+  font-weight: 600;
+  margin: 0;
+}
+
+.bio {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Impact Grid */
+.impactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.impactCard {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #0a0bcd 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+  color: white;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.impactCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.impactNumber {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--primary-yellow);
+  margin-bottom: var(--spacing-sm);
+}
+
+.impactLabel {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .storyContent {
+    grid-template-columns: 1fr;
+  }
+
+  .heroSection {
+    padding: 60px var(--spacing-md) !important;
+  }
+
+  .impactGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

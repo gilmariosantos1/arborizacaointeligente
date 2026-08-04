@@ -1,0 +1,7 @@
+{
+  "name": "Arborizacao_Inteligente",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
