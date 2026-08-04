@@ -165,10 +165,11 @@ const Upload: React.FC = () => {
             <form onSubmit={handleSubmit} className="form-grid">
               <IonItem lines="full">
                 <IonLabel position="floating">Assunto *</IonLabel>
-                <IonInput
+                <input
                   value={formData.assunto}
-                  onIonChange={(e) => handleInputChange('assunto', String(e.detail.value ?? ''))}
+                  onChange={(event) => handleInputChange('assunto', event.target.value)}
                   list="assunto-suggestions"
+                  style={{ width: '100%', border: 'none', background: 'transparent', outline: 'none', padding: '0.5rem 0' }}
                 />
               </IonItem>
               <datalist id="assunto-suggestions">
