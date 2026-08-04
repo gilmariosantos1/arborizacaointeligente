@@ -29,18 +29,22 @@ export const createLoginController = async (req, res) => {
         }
 
         const token = jwt.sign(
-            { id: usuario.id, email: usuario.email},
+            { id: usuario.id_usuario, email: usuario.email },
             process.env.JWT_SECRET,
-            { expiresIn: 'id'}
+            { expiresIn: '1d' }
         )
 
         // Se estiver tudo ok, retornar os dados do usuário (exceto a senha)
         const { senha: _, ...userWithoutPassword } = usuario.toJSON();
+        const loggedUser = {
+            ...userWithoutPassword,
+            id: usuario.id_usuario,
+        };
 
         return res.status(200).json({
             message: 'Login realizado com sucesso!',
             token,
-            user: userWithoutPassword
+            user: loggedUser
         });
         
     } catch(error) {

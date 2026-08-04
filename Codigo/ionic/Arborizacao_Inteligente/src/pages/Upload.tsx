@@ -105,7 +105,8 @@ const Upload: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (!validateForm() || !selectedLocation || !user?.id) return;
+    const usuarioId = user?.id_usuario ?? user?.id;
+    if (!validateForm() || !selectedLocation || !usuarioId) return;
 
     try {
       const dados = new FormData();
@@ -115,7 +116,7 @@ const Upload: React.FC = () => {
       dados.append('longitude', String(selectedLocation.lng));
       dados.append('data_alerta', new Date().toISOString().slice(0, 19).replace('T', ' '));
       dados.append('imagem', formData.imagem as File);
-      dados.append('usuario_id_usuario', String(user.id));
+      dados.append('usuario_id_usuario', String(usuarioId));
 
       await createAlerta(dados);
       window.alert('Upload realizado com sucesso!');
