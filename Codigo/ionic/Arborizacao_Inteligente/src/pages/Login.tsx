@@ -101,7 +101,7 @@ const Login: React.FC = () => {
             {errors.senha && <div className="error-text">{errors.senha}</div>}
 
             <div className="centered">
-              <IonButton fill="clear" size="small" onClick={() => history.push('/redefinir-senha')}>
+              <IonButton fill="clear" size="small" color="primary" onClick={() => history.push('/redefinir-senha')}>
                 Esqueceu sua senha?
               </IonButton>
             </div>
