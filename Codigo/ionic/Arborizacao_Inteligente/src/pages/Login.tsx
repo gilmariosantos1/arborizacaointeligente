@@ -65,7 +65,7 @@ const Login: React.FC = () => {
   return (
     <IonPage>
       <Header />
-      <IonContent className="page-content">
+      <IonContent className="page-content auth-page-content">
         <div className="auth-card">
           <img
             className="logo"
@@ -81,7 +81,7 @@ const Login: React.FC = () => {
             {errors.geral && <div className="error-text">{errors.geral}</div>}
 
             <IonItem lines="full">
-              <IonLabel position="floating">E-mail</IonLabel>
+              <IonLabel position="stacked">E-mail</IonLabel>
               <IonInput
                 type="email"
                 value={email}
@@ -91,7 +91,7 @@ const Login: React.FC = () => {
             {errors.email && <div className="error-text">{errors.email}</div>}
 
             <IonItem lines="full">
-              <IonLabel position="floating">Senha</IonLabel>
+              <IonLabel position="stacked">Senha</IonLabel>
               <IonInput
                 type="password"
                 value={senha}

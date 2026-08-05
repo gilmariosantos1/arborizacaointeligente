@@ -102,11 +102,11 @@ const Contato: React.FC = () => {
             <form onSubmit={handleSubmit} className="form-grid">
               <div className="form-row">
                 <IonItem lines="full">
-                  <IonLabel position="floating">Nome Completo</IonLabel>
+                  <IonLabel position="stacked">Nome Completo</IonLabel>
                   <IonInput value={formData.nome} onIonChange={(e) => handleChange('nome', String(e.detail.value ?? ''))} />
                 </IonItem>
                 <IonItem lines="full">
-                  <IonLabel position="floating">E-mail</IonLabel>
+                  <IonLabel position="stacked">E-mail</IonLabel>
                   <IonInput type="email" value={formData.email} onIonChange={(e) => handleChange('email', String(e.detail.value ?? ''))} />
                 </IonItem>
               </div>
@@ -114,13 +114,13 @@ const Contato: React.FC = () => {
               {errors.email && <div className="error-text">{errors.email}</div>}
 
               <IonItem lines="full">
-                <IonLabel position="floating">Assunto</IonLabel>
+                <IonLabel position="stacked">Assunto</IonLabel>
                 <IonInput value={formData.assunto} onIonChange={(e) => handleChange('assunto', String(e.detail.value ?? ''))} />
               </IonItem>
               {errors.assunto && <div className="error-text">{errors.assunto}</div>}
 
               <IonItem lines="full">
-                <IonLabel position="floating">Mensagem</IonLabel>
+                <IonLabel position="stacked">Mensagem</IonLabel>
                 <IonTextarea rows={5} value={formData.mensagem} onIonChange={(e) => handleChange('mensagem', String(e.detail.value ?? ''))} />
               </IonItem>
               {errors.mensagem && <div className="error-text">{errors.mensagem}</div>}

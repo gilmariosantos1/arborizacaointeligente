@@ -7,8 +7,6 @@ import {
   IonItem,
   IonLabel,
   IonPage,
-  IonSelect,
-  IonSelectOption,
   IonTextarea,
   IonText,
 } from '@ionic/react';
@@ -165,12 +163,11 @@ const Upload: React.FC = () => {
 
             <form onSubmit={handleSubmit} className="form-grid">
               <IonItem lines="full">
-                <IonLabel position="floating">Assunto *</IonLabel>
-                <input
+                <IonLabel position="stacked">Assunto *</IonLabel>
+                <IonInput
                   value={formData.assunto}
-                  onChange={(event) => handleInputChange('assunto', event.target.value)}
+                  onIonChange={(event) => handleInputChange('assunto', String(event.detail.value ?? ''))}
                   list="assunto-suggestions"
-                  style={{ width: '100%', border: 'none', background: 'transparent', outline: 'none', padding: '0.5rem 0' }}
                 />
               </IonItem>
               <datalist id="assunto-suggestions">
@@ -181,7 +178,7 @@ const Upload: React.FC = () => {
               {errors.assunto && <div className="error-text">{errors.assunto}</div>}
 
               <IonItem lines="full">
-                <IonLabel position="floating">Endereço</IonLabel>
+                <IonLabel position="stacked">Endereço</IonLabel>
                 <IonInput value={formData.endereco} onIonChange={(e) => handleInputChange('endereco', String(e.detail.value ?? ''))} />
               </IonItem>
 
@@ -190,7 +187,7 @@ const Upload: React.FC = () => {
               </IonButton>
 
               <IonItem lines="full">
-                <IonLabel position="floating">Localização</IonLabel>
+                <IonLabel position="stacked">Localização</IonLabel>
                 <IonInput value={formData.localizacao} readonly />
               </IonItem>
               {errors.localizacao && <div className="error-text">{errors.localizacao}</div>}
@@ -198,7 +195,7 @@ const Upload: React.FC = () => {
               <MapSelector onLocationSelect={handleLocationSelect} selectedLocation={selectedLocation} />
 
               <IonItem lines="full">
-                <IonLabel position="floating">Descrição *</IonLabel>
+                <IonLabel position="stacked">Descrição *</IonLabel>
                 <IonTextarea rows={4} value={formData.descricao} onIonChange={(e) => handleInputChange('descricao', String(e.detail.value ?? ''))} />
               </IonItem>
               {errors.descricao && <div className="error-text">{errors.descricao}</div>}

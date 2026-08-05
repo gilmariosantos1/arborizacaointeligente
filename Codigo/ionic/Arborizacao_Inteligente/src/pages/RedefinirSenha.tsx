@@ -92,7 +92,7 @@ const RedefinirSenha: React.FC = () => {
             {step === 'email' ? (
               <>
                 <IonItem lines="full">
-                  <IonLabel position="floating">E-mail</IonLabel>
+                  <IonLabel position="stacked">E-mail</IonLabel>
                   <IonInput type="email" value={email} onIonChange={(e) => setEmail(String(e.detail.value ?? ''))} />
                 </IonItem>
                 {errors.email && <div className="error-text">{errors.email}</div>}
@@ -100,13 +100,13 @@ const RedefinirSenha: React.FC = () => {
             ) : (
               <>
                 <IonItem lines="full">
-                  <IonLabel position="floating">Nova senha</IonLabel>
+                  <IonLabel position="stacked">Nova senha</IonLabel>
                   <IonInput type="password" value={senha} onIonChange={(e) => setSenha(String(e.detail.value ?? ''))} />
                 </IonItem>
                 {errors.senha && <div className="error-text">{errors.senha}</div>}
 
                 <IonItem lines="full">
-                  <IonLabel position="floating">Confirmar senha</IonLabel>
+                  <IonLabel position="stacked">Confirmar senha</IonLabel>
                   <IonInput type="password" value={confirmarSenha} onIonChange={(e) => setConfirmarSenha(String(e.detail.value ?? ''))} />
                 </IonItem>
                 {errors.confirmarSenha && <div className="error-text">{errors.confirmarSenha}</div>}

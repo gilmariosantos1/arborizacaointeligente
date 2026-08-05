@@ -171,7 +171,7 @@ const Cadastro: React.FC = () => {
   return (
     <IonPage>
       <Header />
-      <IonContent className="page-content">
+      <IonContent className="page-content auth-page-content">
         <div className="form-card">
           <IonText>
             <h2 className="section-title">Junte-se a Nós</h2>
@@ -183,11 +183,11 @@ const Cadastro: React.FC = () => {
 
             <div className="form-row">
               <IonItem lines="full">
-                <IonLabel position="floating">Nome Completo</IonLabel>
+                <IonLabel position="stacked">Nome Completo</IonLabel>
                 <IonInput value={formData.nome} onIonChange={(e) => handleChange('nome', String(e.detail.value ?? ''))} />
               </IonItem>
               <IonItem lines="full">
-                <IonLabel position="floating">E-mail</IonLabel>
+                <IonLabel position="stacked">E-mail</IonLabel>
                 <IonInput type="email" value={formData.email} onIonChange={(e) => handleChange('email', String(e.detail.value ?? ''))} />
               </IonItem>
             </div>
@@ -196,11 +196,11 @@ const Cadastro: React.FC = () => {
 
             <div className="form-row">
               <IonItem lines="full">
-                <IonLabel position="floating">CPF</IonLabel>
+                <IonLabel position="stacked">CPF</IonLabel>
                 <IonInput value={formData.cpf} onIonChange={(e) => handleChange('cpf', String(e.detail.value ?? ''))} />
               </IonItem>
               <IonItem lines="full">
-                <IonLabel position="floating">Data de Nascimento</IonLabel>
+                <IonLabel position="stacked">Data de Nascimento</IonLabel>
                 <IonInput type="date" value={formData.data_nascimento} onIonChange={(e) => handleChange('data_nascimento', String(e.detail.value ?? ''))} />
               </IonItem>
             </div>
@@ -209,11 +209,11 @@ const Cadastro: React.FC = () => {
 
             <div className="form-row">
               <IonItem lines="full">
-                <IonLabel position="floating">CEP</IonLabel>
+                <IonLabel position="stacked">CEP</IonLabel>
                 <IonInput value={formData.cep} onIonChange={(e) => handleChange('cep', String(e.detail.value ?? ''))} />
               </IonItem>
               <IonItem lines="full">
-                <IonLabel>Estado</IonLabel>
+                <IonLabel position="stacked">Estado</IonLabel>
                 <IonSelect value={formData.estado} onIonChange={(e) => handleChange('estado', String(e.detail.value ?? ''))}>
                   <IonSelectOption value="">Selecione</IonSelectOption>
                   {estados.map((estado) => (
@@ -242,11 +242,11 @@ const Cadastro: React.FC = () => {
 
             <div className="form-row">
               <IonItem lines="full">
-                <IonLabel position="floating">Senha</IonLabel>
+                <IonLabel position="stacked">Senha</IonLabel>
                 <IonInput type="password" value={formData.senha} onIonChange={(e) => handleChange('senha', String(e.detail.value ?? ''))} />
               </IonItem>
               <IonItem lines="full">
-                <IonLabel position="floating">Confirmar Senha</IonLabel>
+                <IonLabel position="stacked">Confirmar Senha</IonLabel>
                 <IonInput type="password" value={formData.confirmaSenha} onIonChange={(e) => handleChange('confirmaSenha', String(e.detail.value ?? ''))} />
               </IonItem>
             </div>
