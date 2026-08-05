@@ -1,0 +1,73 @@
+@keyframes cardSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardGlow {
+  0%, 100% {
+    box-shadow: var(--shadow-md), 0 0 0 0 rgba(103, 235, 38, 0.3);
+  }
+  50% {
+    box-shadow: var(--shadow-lg), 0 0 0 8px rgba(103, 235, 38, 0);
+  }
+}
+
+.card {
+  background-color: var(--bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-normal);
+  border: 1px solid var(--border-color);
+  animation: cardSlideUp 0.5s ease-out;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* Variantes */
+.elevated {
+  box-shadow: var(--shadow-lg);
+}
+
+.flat {
+  box-shadow: none;
+  border: 1px solid var(--border-color);
+}
+
+.filled {
+  background-color: var(--bg-light);
+  border: none;
+}
+
+.outlined {
+  background-color: transparent;
+  border: 2px solid var(--primary-blue);
+}
+
+.hasImage {
+  overflow: hidden;
+  padding: 0;
+}
+
+.hasImage > img:first-child {
+  width: 100%;
+  display: block;
+  transition: transform var(--transition-normal);
+}
+
+.hasImage:hover > img:first-child {
+  transform: scale(1.05);
+}
+
+.hasImage > *:not(:first-child) {
+  padding: var(--spacing-lg);
+}
