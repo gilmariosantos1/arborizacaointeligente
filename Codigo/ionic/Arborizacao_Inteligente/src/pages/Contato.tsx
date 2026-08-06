@@ -13,6 +13,7 @@ import {
 import './ArborizacaoPages.css';
 import Header from '../components/Header';
 import { useAuth } from '../auth/AuthContext';
+import { contato } from '../services/ContatoService'
 
 const Contato: React.FC = () => {
   const history = useHistory();
@@ -63,11 +64,24 @@ const Contato: React.FC = () => {
     setErrors({});
     setIsLoading(true);
 
-    setTimeout(() => {
+    try {
+      await contato(formData);
+
       setSubmitSuccess(true);
-      setFormData({ nome: '', email: '', assunto: '', mensagem: '' });
+      
+      setFormData({
+        nome: '',
+        email: '',
+        assunto: '',
+        mensagem: ''
+      });
+
+    } catch (error) {
+      console.error(error);
+      alert("Erro ao enviar a mensagem.");
+    } finally {
       setIsLoading(false);
-    }, 700);
+    }
   };
 
   return (
